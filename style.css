@@ -53,6 +53,11 @@ nav.scrolled {
     transform: scale(1.05);
 }
 
+/* Brand accent for single-word logo: make 'Consultancy' blue */
+.brand-accent {
+    color: #4F46E5;
+}
+
 .logo-icon {
     width: 40px;
     height: 40px;
@@ -293,6 +298,7 @@ nav.scrolled {
     max-width: 550px;
     z-index: 2;
     animation: fadeInRight 1s ease;
+    margin-left: 60px;
 }
 
 @keyframes fadeInRight {
@@ -398,6 +404,12 @@ nav.scrolled {
         width: 100%;
         padding: 15px 0;
         border-bottom: 1px solid #f0f0f0;
+
+    /* Reset hero image offset on smaller screens */
+    .hero-img {
+        margin-left: 0;
+        max-width: 100%;
+    }
     }
 
     .nav-cta {
