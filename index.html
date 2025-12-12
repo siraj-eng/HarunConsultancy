@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,6 +16,9 @@
     <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
                 <span>Harun<span class="brand-accent">Consultancy</span></span>
             </a>
 
@@ -42,35 +46,54 @@
             <p>Expert guidance tailored to your KCSE results, unique strengths, and career aspirations. Let's unlock your full potential together.</p>
 
             <div class="cta-group">
-                <button class="cta-primary">Begin Your Journey</button>
-                <button class="cta-secondary">Browse Courses</button>
+                <button class="cta-primary">
+                    <i class="fas fa-play-circle"></i>
+                    Begin Your Journey
+                </button>
+                <button class="cta-secondary">
+                    <i class="fas fa-book-open"></i>
+                    Browse Courses
+                </button>
             </div>
 
             <div class="trust-line">
                 <div class="trust-icons">
-                    <span class="checkmark">✓</span>
-                    <span class="checkmark">✓</span>
-                    <span class="checkmark">✓</span>
+                    <span class="checkmark"><i class="fas fa-check"></i></span>
+                    <span class="checkmark"><i class="fas fa-check"></i></span>
+                    <span class="checkmark"><i class="fas fa-check"></i></span>
                 </div>
-                Trusted by over 5,000+ students across Kenya
+                <span class="trust-text">Trusted by over 5,000+ students across Kenya</span>
             </div>
         </div>
 
         <div class="hero-img">
             <div class="image-wrapper">
-                <img src="undraw_educator_6dgp.png" alt="Student Consultation">
+                <img src="undraw_educator_6dgp.png" alt="Student Consultation" class="hero-image">
                 <div class="floating-card card-1">
-                    <div class="card-icon">📚</div>
+                    <div class="card-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
                     <div class="card-text">
                         <strong>500+</strong>
                         <span>Course Options</span>
                     </div>
                 </div>
                 <div class="floating-card card-2">
-                    <div class="card-icon">🎯</div>
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
                     <div class="card-text">
                         <strong>95%</strong>
                         <span>Success Rate</span>
+                    </div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card-text">
+                        <strong>8+</strong>
+                        <span>Years Experience</span>
                     </div>
                 </div>
             </div>
@@ -90,6 +113,7 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
+                <span class="section-badge">About Us</span>
                 <h2 class="section-title">About Harun Consultancy</h2>
                 <p class="section-subtitle">Your trusted partner in career guidance and academic success</p>
             </div>
@@ -101,10 +125,16 @@
                     
                     <div class="mission-vision">
                         <div class="mission">
+                            <div class="mv-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
                             <h4>Our Mission</h4>
                             <p>To empower Kenyan students with the knowledge, tools, and confidence needed to make informed career decisions that align with their academic strengths and personal aspirations.</p>
                         </div>
                         <div class="vision">
+                            <div class="mv-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
                             <h4>Our Vision</h4>
                             <p>To become East Africa's leading career consultancy, recognized for transforming student potential into professional success through innovative guidance solutions.</p>
                         </div>
@@ -113,18 +143,30 @@
                 
                 <div class="about-stats">
                     <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
                         <div class="stat-number">8+</div>
                         <div class="stat-text">Years Experience</div>
                     </div>
                     <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
                         <div class="stat-number">5,000+</div>
                         <div class="stat-text">Students Guided</div>
                     </div>
                     <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
                         <div class="stat-number">95%</div>
                         <div class="stat-text">Success Rate</div>
                     </div>
                     <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
                         <div class="stat-number">47</div>
                         <div class="stat-text">Universities Partnered</div>
                     </div>
@@ -137,88 +179,227 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">Comprehensive career guidance solutions tailored for you</p>
+                <span class="section-badge">Our Services</span>
+                <h2 class="section-title">Comprehensive Career Guidance</h2>
+                <p class="section-subtitle">Tailored solutions to help you make the right career decisions</p>
             </div>
             
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5L4.2 7 12 4l7.8 3L12 9.5zM6 12v6l6 3 6-3v-6"/></svg>
+                        <i class="fas fa-chart-pie"></i>
                     </div>
                     <h3>Career Assessment</h3>
                     <p>In-depth analysis of your strengths, interests, and KCSE results to recommend the best career paths.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v2H7V3zm0 4h10v14H7V7zm2 2v2h6V9H9z"/></svg>
+                        <i class="fas fa-list-check"></i>
                     </div>
                     <h3>Course Selection</h3>
                     <p>Expert guidance on university and college courses that match your academic profile and aspirations.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11v8h18v-8l-9-5-9 5zm9-7l7 4v2H5V8l7-4z"/></svg>
+                        <i class="fas fa-building-columns"></i>
                     </div>
                     <h3>University Placement</h3>
                     <p>Assistance with KUCCPS placement and applications to top universities in Kenya and abroad.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7v13h18V7H3zm2 2h14v9H5V9zm4-5h6v3H9V4z"/></svg>
+                        <i class="fas fa-comments"></i>
                     </div>
                     <h3>Career Counseling</h3>
                     <p>One-on-one sessions with experienced career counselors for personalized guidance and mentorship.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Courses Section -->
-<section id="courses" class="courses">
-  <h2>Explore Top Courses</h2>
-  <p class="courses-sub">Browse popular study paths chosen by KCSE graduates.</p>
+    <section id="courses" class="courses">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Explore Courses</span>
+                <h2 class="section-title">Popular Career Paths</h2>
+                <p class="section-subtitle">Browse top study paths chosen by KCSE graduates across Kenya</p>
+            </div>
+            
+            <div class="courses-filter">
+                <button class="filter-btn active" data-filter="all">All Categories</button>
+                <button class="filter-btn" data-filter="technology">Technology</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+                <button class="filter-btn" data-filter="health">Health Sciences</button>
+                <button class="filter-btn" data-filter="engineering">Engineering</button>
+                <button class="filter-btn" data-filter="creative">Creative Arts</button>
+            </div>
+            
+            <div class="course-grid">
+                <div class="course-card" data-category="technology">
+                    <div class="course-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>ICT & Computer Science</h3>
+                    <p>Software development, networking, cybersecurity, and digital innovation for tech enthusiasts.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 4-5 Years</span>
+                        <span><i class="fas fa-university"></i> 120+ Institutions</span>
+                    </div>
+                    <button class="course-btn">Explore Pathway <i class="fas fa-arrow-right"></i></button>
+                </div>
+                
+                <div class="course-card" data-category="business">
+                    <div class="course-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business & Finance</h3>
+                    <p>Accounting, finance, marketing, and management for future business leaders and entrepreneurs.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 3-4 Years</span>
+                        <span><i class="fas fa-university"></i> 95+ Institutions</span>
+                    </div>
+                    <button class="course-btn">Explore Pathway <i class="fas fa-arrow-right"></i></button>
+                </div>
+                
+                <div class="course-card" data-category="engineering">
+                    <div class="course-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Engineering & Technical</h3>
+                    <p>Electrical, mechanical, civil engineering and TVET programs for hands-on problem solvers.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 5-6 Years</span>
+                        <span><i class="fas fa-university"></i> 45+ Institutions</span>
+                    </div>
+                    <button class="course-btn">Explore Pathway <i class="fas fa-arrow-right"></i></button>
+                </div>
+                
+                <div class="course-card" data-category="health">
+                    <div class="course-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Health & Medical Sciences</h3>
+                    <p>Nursing, clinical medicine, pharmacy, and laboratory sciences for healthcare professionals.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 4-6 Years</span>
+                        <span><i class="fas fa-university"></i> 60+ Institutions</span>
+                    </div>
+                    <button class="course-btn">Explore Pathway <i class="fas fa-arrow-right"></i></button>
+                </div>
+                
+                <div class="course-card" data-category="business">
+                    <div class="course-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>Hospitality & Tourism</h3>
+                    <p>Hotel management, tourism, culinary arts, and customer experience for service-oriented minds.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 2-3 Years</span>
+                        <span><i class="fas fa-university"></i> 40+ Institutions</span>
+                    </div>
+                    <button class="course-btn">Explore Pathway <i class="fas fa-arrow-right"></i></button>
+                </div>
+                
+                <div class="course-card" data-category="creative">
+                    <div class="course-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Creative Arts & Media</h3>
+                    <p>Graphic design, film production, music, animation, and digital content creation for creatives.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 3-4 Years</span>
+                        <span><i class="fas fa-university"></i> 35+ Institutions</span>
+                    </div>
+                    <button class="course-btn">Explore Pathway <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <div class="courses-cta">
+                <button class="cta-primary">
+                    <i class="fas fa-search"></i>
+                    Find Your Perfect Course
+                </button>
+            </div>
+        </div>
+    </section>
 
-  <div class="course-grid">
+    <!-- Contact CTA Section -->
+    <section id="contact" class="contact-cta">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Book a free consultation with our career experts today</p>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="tel" placeholder="Phone Number">
+                    </div>
+                    <button type="submit" class="cta-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Free Consultation
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-    <div class="course-card">
-      <h3>ICT & Computer Science</h3>
-      <p>For students interested in software, networking, cybersecurity, and digital innovation.</p>
-      <button class="course-btn">Learn More</button>
-    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <span>Harun<span class="brand-accent">Consultancy</span></span>
+                    </a>
+                    <p class="footer-description">Empowering Kenyan students to make informed career decisions since 2015.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+                        <li><i class="fas fa-phone"></i> +254 712 345 678</li>
+                        <li><i class="fas fa-envelope"></i> info@harunconsultancy.co.ke</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Harun Consultancy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    <div class="course-card">
-      <h3>Business & Finance</h3>
-      <p>Ideal for entrepreneurial minds, accounting enthusiasts, and future business leaders.</p>
-      <button class="course-btn">Learn More</button>
-    </div>
-
-    <div class="course-card">
-      <h3>Engineering & Technical</h3>
-      <p>Electrical, mechanical, civil, and TVET technical programs for hands-on problem solvers.</p>
-      <button class="course-btn">Learn More</button>
-    </div>
-
-    <div class="course-card">
-      <h3>Health & Medical Sciences</h3>
-      <p>Nursing, clinical medicine, pharmacy, lab science, and other health-care pathways.</p>
-      <button class="course-btn">Learn More</button>
-    </div>
-
-    <div class="course-card">
-      <h3>Hospitality & Tourism</h3>
-      <p>For students passionate about hotels, travel, food, and customer experience.</p>
-      <button class="course-btn">Learn More</button>
-    </div>
-
-    <div class="course-card">
-      <h3>Creative Arts & Media</h3>
-      <p>Design, film, music, photography, animation, and digital content creation.</p>
-      <button class="course-btn">Learn More</button>
-    </div>
-
-  </div>
-</section>
-
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
