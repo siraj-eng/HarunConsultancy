@@ -380,7 +380,7 @@
                     <h3>Send Us a Message</h3>
                     <p>Fill out the form below and we'll get back to you within 24 hours</p>
                     
-                    <form id="contactForm" class="contact-form">
+                    <form id="contactForm" class="contact-form" onsubmit="sendWhatsAppMessage(event)">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Full Name *</label>
@@ -408,10 +408,19 @@
                             <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="submit-btn">
+                        <div class="form-group" style="display: none;">
+                            <input type="hidden" name="_subject" value="New Contact Form Submission from Harun Consultancy">
+                            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                            <input type="text" name="_gotcha" style="display:none">
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitBtn">
                             <i class="fas fa-paper-plane"></i>
-                            Send Message
+                            <span class="btn-text">Send Message</span>
+                            <div class="spinner" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </div>
                         </button>
+                        <div id="form-messages" class="form-message" style="display: none; margin-top: 15px; padding: 10px; border-radius: 4px;"></div>
                     </form>
                 </div>
             </div>
@@ -440,7 +449,7 @@
                         <a href="" class="social-link" aria-label="Twitter">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://www.instagram.com/macruf_1?igsh=MWRidzg1MWFuYzMycQ==" class="social-link" aria-label="Instagram">
+                        <a href="https://www.instagram.com/macruf_1?igshid=MWRidzg1MWFuYzMycQ==" class="social-link" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="" class="social-link" aria-label="LinkedIn">
@@ -510,6 +519,61 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
+    <script>
+        function sendWhatsAppMessage(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const spinner = submitBtn.querySelector('.spinner');
+            const formMessages = document.getElementById('form-messages');
+            
+            // Get form values
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
+            const phone = form.phone.value.trim();
+            const subject = form.subject.value.trim();
+            const message = form.message.value.trim();
+            
+            // Validate required fields
+            if (!name || !email || !message) {
+                formMessages.textContent = 'Please fill in all required fields.';
+                formMessages.style.display = 'block';
+                formMessages.style.backgroundColor = '#f8d7da';
+                formMessages.style.color = '#721c24';
+                return;
+            }
+            
+            // Format the message
+            let whatsappMessage = `*New Contact Form Submission*%0A%0A`;
+            whatsappMessage += `*Name:* ${name}%0A`;
+            whatsappMessage += `*Email:* ${email}%0A`;
+            if (phone) whatsappMessage += `*Phone:* ${phone}%0A`;
+            if (subject) whatsappMessage += `*Subject:* ${subject}%0A`;
+            whatsappMessage += `%0A*Message:*%0A${message}`;
+            
+            // Your WhatsApp number (with country code, no + or 0)
+            const whatsappNumber = '254742318339';
+            
+            // Open WhatsApp with the message
+            window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
+            
+            // Show success message
+            formMessages.textContent = 'Opening WhatsApp with your message...';
+            formMessages.style.display = 'block';
+            formMessages.style.backgroundColor = '#d4edda';
+            formMessages.style.color = '#155724';
+            
+            // Reset form
+            form.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessages.style.display = 'none';
+            }, 5000);
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
