@@ -119,35 +119,26 @@ function initNavbarScrollEffect() {
  */
 function initButtonAnimations() {
     // CTA Buttons
-    const ctaPrimary = document.querySelector('.cta-primary');
-    const ctaSecondary = document.querySelector('.cta-secondary');
+    const ctaButtons = document.querySelectorAll('.cta-primary, .cta-secondary, .course-btn, .submit-btn');
     
-    if (ctaPrimary) {
-        ctaPrimary.addEventListener('click', function() {
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            if (this.classList.contains('submit-btn')) return; // Skip form submit buttons
+            
             animateButtonClick(this);
-            // Add your navigation logic here
-            console.log('CTA Primary clicked - Starting career assessment...');
-            // window.location.href = '/assessment';
-        });
-    }
-    
-    if (ctaSecondary) {
-        ctaSecondary.addEventListener('click', function() {
-            animateButtonClick(this);
-            // Add your navigation logic here
-            console.log('CTA Secondary clicked - Browsing courses...');
-            // window.location.href = '/courses';
-        });
-    }
-    
-    // Course Buttons
-    const courseButtons = document.querySelectorAll('.course-btn');
-    courseButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            animateButtonClick(this);
-            const courseTitle = this.closest('.course-card').querySelector('h3').textContent;
-            console.log(`Exploring course: ${courseTitle}`);
-            // Add course exploration logic here
+            
+            // Add specific actions based on button type
+            if (this.classList.contains('cta-primary')) {
+                console.log('CTA Primary clicked - Starting career assessment...');
+                // window.location.href = '/assessment';
+            } else if (this.classList.contains('cta-secondary')) {
+                console.log('CTA Secondary clicked - Browsing courses...');
+                // window.location.href = '/courses';
+            } else if (this.classList.contains('course-btn')) {
+                const courseTitle = this.closest('.course-card').querySelector('h3').textContent;
+                console.log(`Exploring course: ${courseTitle}`);
+                showNotification(`Opening ${courseTitle} details...`, 'info');
+            }
         });
     });
     
@@ -158,7 +149,8 @@ function initButtonAnimations() {
             e.preventDefault();
             animateButtonClick(this);
             console.log('Get Started clicked - Opening consultation form...');
-            // Add consultation form logic here
+            // Scroll to contact section
+            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
         });
     }
 }
@@ -173,33 +165,37 @@ function animateButtonClick(button) {
         button.style.transform = '';
     }, 150);
     
-    // Add ripple effect
-    const ripple = document.createElement('span');
-    const rect = button.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    const x = event.clientX - rect.left - size / 2;
-    const y = event.clientY - rect.top - size / 2;
-    
-    ripple.style.cssText = `
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.7);
-        transform: scale(0);
-        animation: ripple 0.6s linear;
-        width: ${size}px;
-        height: ${size}px;
-        top: ${y}px;
-        left: ${x}px;
-        pointer-events: none;
-    `;
-    
-    button.style.position = 'relative';
-    button.style.overflow = 'hidden';
-    button.appendChild(ripple);
-    
-    setTimeout(() => {
-        ripple.remove();
-    }, 600);
+    // Add ripple effect if not already present
+    if (!button.querySelector('.ripple')) {
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        
+        const rect = button.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = event.clientX - rect.left - size / 2;
+        const y = event.clientY - rect.top - size / 2;
+        
+        ripple.style.cssText = `
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.7);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            width: ${size}px;
+            height: ${size}px;
+            top: ${y}px;
+            left: ${x}px;
+            pointer-events: none;
+        `;
+        
+        button.style.position = 'relative';
+        button.style.overflow = 'hidden';
+        button.appendChild(ripple);
+        
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
+    }
 }
 
 /**
@@ -250,7 +246,8 @@ function initScrollAnimations() {
                 // Handle staggered animations
                 if (entry.target.classList.contains('service-card') || 
                     entry.target.classList.contains('course-card') ||
-                    entry.target.classList.contains('stat-card')) {
+                    entry.target.classList.contains('stat-card') ||
+                    entry.target.classList.contains('contact-card')) {
                     const index = Array.from(entry.target.parentNode.children).indexOf(entry.target);
                     entry.target.style.animationDelay = `${index * 0.1}s`;
                 }
@@ -265,7 +262,8 @@ function initScrollAnimations() {
     const elementsToAnimate = [
         '.hero-text', '.hero-img',
         '.service-card', '.course-card', '.stat-card',
-        '.mission', '.vision', '.section-header'
+        '.mission', '.vision', '.section-header',
+        '.contact-card'
     ];
     
     elementsToAnimate.forEach(selector => {
@@ -396,6 +394,24 @@ function initContactForm() {
     const contactForm = document.getElementById('contactForm');
     if (!contactForm) return;
     
+    // Add input validation styles
+    const inputs = contactForm.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            if (this.checkValidity()) {
+                this.style.borderColor = '#14B8B6';
+            } else {
+                this.style.borderColor = '';
+            }
+        });
+        
+        input.addEventListener('blur', function() {
+            if (!this.value && this.hasAttribute('required')) {
+                this.style.borderColor = '#FF7A59';
+            }
+        });
+    });
+    
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -404,15 +420,15 @@ function initContactForm() {
         const formObject = Object.fromEntries(formData);
         
         // Simple validation
-        const inputs = this.querySelectorAll('input[required]');
+        const requiredInputs = this.querySelectorAll('input[required], textarea[required]');
         let isValid = true;
         
-        inputs.forEach(input => {
+        requiredInputs.forEach(input => {
             if (!input.value.trim()) {
-                input.style.borderColor = 'var(--secondary)';
+                input.style.borderColor = '#FF7A59';
                 isValid = false;
             } else {
-                input.style.borderColor = '';
+                input.style.borderColor = '#14B8B6';
             }
         });
         
@@ -421,10 +437,19 @@ function initContactForm() {
             return;
         }
         
+        // Email validation
+        const emailInput = this.querySelector('input[type="email"]');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailInput.value && !emailRegex.test(emailInput.value)) {
+            emailInput.style.borderColor = '#FF7A59';
+            showNotification('Please enter a valid email address.', 'error');
+            return;
+        }
+        
         // Show loading state
-        const submitButton = this.querySelector('button[type="submit"]');
+        const submitButton = this.querySelector('.submit-btn');
         const originalText = submitButton.innerHTML;
-        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitButton.disabled = true;
         
         // Simulate API call (replace with actual API call)
@@ -436,11 +461,34 @@ function initContactForm() {
             submitButton.innerHTML = originalText;
             submitButton.disabled = false;
             
+            // Reset border colors
+            inputs.forEach(input => {
+                input.style.borderColor = '';
+            });
+            
             // Show success message
-            showNotification('Thank you! We will contact you within 24 hours.', 'success');
+            showNotification('Thank you! Your message has been sent. We will contact you within 24 hours.', 'success');
             
             // Log form data (replace with actual submission)
-            console.log('Form submitted:', formObject);
+            console.log('Contact form submitted:', formObject);
+            
+            // You would typically send the data to your server here
+            // Example:
+            // fetch('/api/contact', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify(formObject)
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     console.log('Success:', data);
+            //     showNotification('Thank you! Your message has been sent.', 'success');
+            // })
+            // .catch(error => {
+            //     console.error('Error:', error);
+            //     showNotification('Something went wrong. Please try again.', 'error');
+            // });
+            
         }, 1500);
     });
 }
@@ -468,16 +516,18 @@ function showNotification(message, type = 'success') {
         position: fixed;
         top: 100px;
         right: 30px;
-        background: ${type === 'success' ? 'var(--primary)' : 'var(--secondary)'};
+        background: ${type === 'success' ? '#0EA5A4' : type === 'error' ? '#FF7A59' : '#FFB020'};
         color: white;
         padding: 16px 24px;
-        border-radius: var(--radius-md);
-        box-shadow: var(--shadow-lg);
+        border-radius: 8px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         z-index: 9999;
         display: flex;
         align-items: center;
         gap: 15px;
         animation: slideIn 0.3s ease;
+        max-width: 400px;
+        font-size: 0.95rem;
     `;
     
     document.body.appendChild(notification);
@@ -574,6 +624,12 @@ function addAnimationStyles() {
             cursor: pointer;
             padding: 0;
             line-height: 1;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+        
+        .notification-close:hover {
+            opacity: 1;
         }
         
         body.menu-open {
