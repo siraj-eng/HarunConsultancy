@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business & Finance | Career Guide - Harun Consultancy</title>
+    <title>Creative Arts & Media | Career Guide - Harun Consultancy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
@@ -25,7 +25,8 @@
             --white: #FFFFFF;
             --bg-light: #F7FEFD;
             --gradient-primary: linear-gradient(135deg, #0EA5A4 0%, #0C8C8B 100%);
-            --gradient-business: linear-gradient(135deg, #0C8C8B 0%, #0A7180 100%);
+            --gradient-creative: linear-gradient(135deg, #8B5CF6 0%, #0EA5A4 100%);
+            --gradient-artistic: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
             --shadow-md: 0 4px 16px rgba(14, 165, 164, 0.12);
             --shadow-lg: 0 8px 32px rgba(14, 165, 164, 0.16);
             --radius-md: 12px;
@@ -73,7 +74,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--gradient-primary);
+            background: var(--gradient-creative);
             color: var(--white);
             text-decoration: none;
             padding: 12px 24px;
@@ -137,7 +138,7 @@
 
         /* Blog Hero */
         .blog-hero {
-            background: var(--gradient-business);
+            background: var(--gradient-creative);
             color: var(--white);
             padding: 60px 40px;
             text-align: center;
@@ -154,6 +155,7 @@
             height: 400px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
+            animation: rotate 20s linear infinite;
         }
 
         .blog-hero::after {
@@ -165,6 +167,12 @@
             height: 300px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
+            animation: rotate 25s linear infinite reverse;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .blog-hero-content {
@@ -182,6 +190,12 @@
             justify-content: center;
             margin: 0 auto 25px;
             font-size: 2.5rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
         }
 
         .blog-hero h1 {
@@ -282,26 +296,24 @@
         }
 
         .blog-section ul li::before {
-            content: '✓';
+            content: '🎨';
             position: absolute;
             left: 0;
-            color: var(--primary);
-            font-weight: bold;
             font-size: 1.1rem;
         }
 
         /* Special Section */
         .blog-section.highlight {
-            background: #F0F9F9;
+            background: #F8F5FF;
             padding: 35px;
             border-radius: var(--radius-md);
-            border-left: 5px solid var(--primary);
+            border-left: 5px solid #8B5CF6;
             margin-top: 40px;
             box-shadow: var(--shadow-md);
         }
 
         .blog-section.highlight h2 {
-            color: var(--primary);
+            color: #8B5CF6;
             border: none;
             font-size: 1.6rem;
         }
@@ -332,7 +344,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--gradient-business);
+            background: var(--gradient-creative);
             transform: scaleX(0);
             transition: transform var(--transition);
         }
@@ -340,7 +352,7 @@
         .spec-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
-            border-color: var(--primary-light);
+            border-color: #8B5CF6;
         }
 
         .spec-card:hover::before {
@@ -372,10 +384,10 @@
         }
 
         .university-item:hover {
-            background: var(--primary);
+            background: var(--gradient-creative);
             color: var(--white);
             transform: translateY(-3px);
-            border-color: var(--primary);
+            border-color: #8B5CF6;
         }
 
         /* Career Grid */
@@ -396,13 +408,13 @@
         }
 
         .career-card:hover {
-            border-color: var(--primary);
+            border-color: #8B5CF6;
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
         }
 
         .career-card strong {
-            color: var(--primary);
+            color: #8B5CF6;
             font-size: 1.1rem;
             display: block;
             margin-bottom: 10px;
@@ -427,14 +439,14 @@
         }
 
         .req-card:hover {
-            border-color: var(--primary);
+            border-color: #8B5CF6;
             transform: translateY(-5px);
         }
 
         .req-card strong {
             display: block;
             font-size: 1.8rem;
-            color: var(--primary);
+            color: #8B5CF6;
             margin-bottom: 10px;
             font-family: 'Poppins', sans-serif;
         }
@@ -458,13 +470,13 @@
         }
 
         .duration-card:hover {
-            border-color: var(--primary);
+            border-color: #8B5CF6;
             transform: translateY(-5px);
         }
 
         .duration-card i {
             font-size: 2rem;
-            color: var(--primary);
+            color: #8B5CF6;
             margin-bottom: 15px;
             display: block;
         }
@@ -475,11 +487,73 @@
             color: var(--dark);
         }
 
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 2px solid transparent;
+            transition: all var(--transition);
+        }
+
+        .stat-card:hover {
+            border-color: #8B5CF6;
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #8B5CF6;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--gray-dark);
+            font-size: 0.95rem;
+        }
+
+        /* Creative Skills */
+        .creative-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .creative-skill {
+            background: var(--gradient-creative);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all var(--transition);
+        }
+
+        .creative-skill:hover {
+            background: #7C3AED;
+            transform: translateY(-3px);
+        }
+
         /* ============================================
            Call to Action
         ============================================= */
         .blog-cta {
-            background: var(--gradient-business);
+            background: var(--gradient-creative);
             color: var(--white);
             padding: 50px 40px;
             border-radius: var(--radius-md);
@@ -523,7 +597,7 @@
 
         .btn-primary {
             background: var(--white);
-            color: var(--primary);
+            color: #8B5CF6;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
@@ -540,44 +614,36 @@
 
         .btn-secondary:hover {
             background: var(--white);
-            color: var(--primary);
+            color: #8B5CF6;
             transform: translateY(-3px);
         }
 
-        /* Stats Section */
-        .stats-section {
+        /* Creative Fields */
+        .creative-fields {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
         }
 
-        .stat-card {
-            background: var(--white);
-            padding: 25px;
+        .field-item {
+            background: var(--light);
+            padding: 20px;
             border-radius: var(--radius-md);
             text-align: center;
-            box-shadow: var(--shadow-md);
-            border: 2px solid transparent;
             transition: all var(--transition);
         }
 
-        .stat-card:hover {
-            border-color: var(--primary);
+        .field-item:hover {
+            background: #8B5CF6;
+            color: var(--white);
             transform: translateY(-5px);
         }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            font-family: 'Poppins', sans-serif;
+        .field-item i {
+            font-size: 2rem;
             margin-bottom: 10px;
-        }
-
-        .stat-label {
-            color: var(--gray-dark);
-            font-size: 0.95rem;
+            display: block;
         }
 
         /* ============================================
@@ -608,12 +674,17 @@
             .career-grid,
             .requirements-grid,
             .duration-grid,
-            .stats-section {
+            .stats-section,
+            .creative-fields {
                 grid-template-columns: 1fr;
             }
 
             .university-list {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .creative-skills {
+                justify-content: center;
             }
 
             .cta-buttons {
@@ -685,12 +756,12 @@
             <header class="blog-hero">
                 <div class="blog-hero-content">
                     <div class="course-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-palette"></i>
                     </div>
-                    <h1>Business & Finance</h1>
+                    <h1>Creative Arts & Media</h1>
                     <p class="blog-intro">
-                        Your comprehensive guide to careers in entrepreneurship, management, accounting, 
-                        economics, and financial systems. Build the skills to lead and innovate in the business world.
+                        Where imagination meets innovation. Transform your creativity into career 
+                        opportunities across design, media, entertainment, and digital expression.
                     </p>
                     <div class="blog-meta">
                         <div class="meta-item">
@@ -702,8 +773,8 @@
                             <span>For: KCSE Graduates</span>
                         </div>
                         <div class="meta-item">
-                            <i class="fas fa-briefcase"></i>
-                            <span>Versatile Career Paths</span>
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Portfolio-Driven Careers</span>
                         </div>
                     </div>
                 </div>
@@ -716,33 +787,34 @@
                 <section class="blog-section">
                     <h2><i class="fas fa-info-circle"></i> Course Overview</h2>
                     <p>
-                        Business and Finance form the foundation of every successful organization and economy. 
-                        This dynamic field focuses on organizational management, financial systems, market analysis, 
-                        and strategic decision-making that drives growth and innovation.
+                        Creative Arts and Media represents the intersection of artistic expression and 
+                        technological innovation. This dynamic field empowers storytellers, designers, 
+                        and creators to shape culture, communicate ideas, and build compelling experiences 
+                        across digital and traditional platforms.
                     </p>
                     <p>
-                        From multinational corporations to local startups, every organization needs skilled professionals 
-                        who understand how to manage resources, analyze markets, and make sound financial decisions. 
-                        This course is perfect for strategic thinkers, analytical minds, and future leaders who want to 
-                        shape the business landscape.
+                        In today's digital age, creative skills are more valuable than ever. From 
+                        social media content to blockbuster films, from brand identities to interactive 
+                        experiences, creative professionals are the visionaries behind the media that 
+                        shapes our world and drives the attention economy.
                     </p>
                     
                     <div class="stats-section">
                         <div class="stat-card">
-                            <div class="stat-number">95%</div>
-                            <div class="stat-label">Employment Rate</div>
+                            <div class="stat-number">$2.1T</div>
+                            <div class="stat-label">Global Creative Economy</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">4.2%</div>
+                            <div class="stat-number">5.7%</div>
                             <div class="stat-label">Annual Growth</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">40+</div>
+                            <div class="stat-number">20+</div>
                             <div class="stat-label">Specializations</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">70+</div>
-                            <div class="stat-label">Institutions in Kenya</div>
+                            <div class="stat-number">85%</div>
+                            <div class="stat-label">Freelance Potential</div>
                         </div>
                     </div>
                 </section>
@@ -750,30 +822,31 @@
                 <!-- Entry Requirements -->
                 <section class="blog-section">
                     <h2><i class="fas fa-clipboard-check"></i> Entry Requirements (KCSE)</h2>
-                    <p>Different levels of study have varying requirements:</p>
+                    <p>Creative programs value talent and passion alongside academic achievement:</p>
                     
                     <div class="requirements-grid">
                         <div class="req-card">
                             <strong>Degree Programs</strong>
                             <p>Mean Grade C+ and above</p>
-                            <small>Mathematics highly recommended</small>
+                            <small>Portfolio often required</small>
                         </div>
                         <div class="req-card">
                             <strong>Diploma Programs</strong>
                             <p>Mean Grade C or C-</p>
-                            <small>Business-related subjects preferred</small>
+                            <small>Creative aptitude essential</small>
                         </div>
                         <div class="req-card">
                             <strong>Certificate Courses</strong>
                             <p>Mean Grade D+ or D</p>
-                            <small>Basic business understanding</small>
+                            <small>Talent and passion key</small>
                         </div>
                     </div>
                     
                     <p style="margin-top: 20px;">
-                        <strong>Important:</strong> Mathematics and Business Studies are particularly valuable for 
-                        Finance, Economics, and Accounting specializations. Some universities may require specific 
-                        subject combinations for direct entry into specialized programs.
+                        <strong>Portfolio Matters:</strong> For creative fields, your portfolio often speaks louder 
+                        than your grades. Admission panels look for creative potential, original thinking, and 
+                        technical skills. Art and design programs typically require portfolio submissions, 
+                        while media programs may require writing samples or creative projects.
                     </p>
                 </section>
 
@@ -783,236 +856,314 @@
                     <div class="duration-grid">
                         <div class="duration-card">
                             <i class="fas fa-certificate"></i>
-                            <h4>Certificate</h4>
-                            <p>6 months – 1 year</p>
-                            <small>Basic business principles</small>
+                            <h4>Short Courses</h4>
+                            <p>3 – 12 months</p>
+                            <small>Skill-specific training</small>
                         </div>
                         <div class="duration-card">
                             <i class="fas fa-graduation-cap"></i>
                             <h4>Diploma</h4>
                             <p>2 – 3 years</p>
-                            <small>Practical business skills</small>
+                            <small>Comprehensive training</small>
                         </div>
                         <div class="duration-card">
                             <i class="fas fa-university"></i>
                             <h4>Bachelor's Degree</h4>
-                            <p>4 years</p>
-                            <small>Comprehensive business education</small>
+                            <p>3 – 4 years</p>
+                            <small>Advanced creative education</small>
                         </div>
                         <div class="duration-card">
-                            <i class="fas fa-user-graduate"></i>
-                            <h4>Master's (MBA)</h4>
-                            <p>1.5 – 2 years</p>
-                            <small>Advanced leadership training</small>
+                            <i class="fas fa-paint-brush"></i>
+                            <h4>Master's/MA</h4>
+                            <p>1 – 2 years</p>
+                            <small>Specialized mastery</small>
                         </div>
                     </div>
                 </section>
 
-                <!-- Specializations -->
+                <!-- Creative Skills -->
                 <section class="blog-section">
-                    <h2><i class="fas fa-sitemap"></i> Major Branches & Specializations</h2>
+                    <h2><i class="fas fa-star"></i> Essential Creative Skills</h2>
+                    <div class="creative-skills">
+                        <div class="creative-skill">
+                            <i class="fas fa-eye"></i>
+                            Visual Thinking
+                        </div>
+                        <div class="creative-skill">
+                            <i class="fas fa-pencil-alt"></i>
+                            Storytelling
+                        </div>
+                        <div class="creative-skill">
+                            <i class="fas fa-magic"></i>
+                            Design Sense
+                        </div>
+                        <div class="creative-skill">
+                            <i class="fas fa-code"></i>
+                            Technical Skills
+                        </div>
+                        <div class="creative-skill">
+                            <i class="fas fa-users"></i>
+                            Collaboration
+                        </div>
+                        <div class="creative-skill">
+                            <i class="fas fa-lightbulb"></i>
+                            Innovation
+                        </div>
+                        <div class="creative-skill">
+                            <i class="fas fa-clock"></i>
+                            Time Management
+                        </div>
+                        <div class="creative-skill">
+                            <i class="fas fa-chart-line"></i>
+                            Business Sense
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main Specializations -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-sitemap"></i> Main Creative Fields</h2>
                     
                     <div class="specialization-grid">
                         <div class="spec-card">
-                            <h3><i class="fas fa-briefcase"></i> Business Administration</h3>
+                            <h3><i class="fas fa-paint-brush"></i> Graphic Design</h3>
                             <p>
-                                Master organizational leadership, strategic planning, and operational management. 
-                                Learn to lead teams and drive business growth across various industries.
+                                Visual communication through typography, imagery, color, and layout 
+                                for branding, advertising, and digital media.
                             </p>
                             <ul>
-                                <li>Business Manager</li>
-                                <li>Operations Director</li>
-                                <li>Project Manager</li>
-                                <li>Human Resources Manager</li>
+                                <li>Brand Designer</li>
+                                <li>UI/UX Designer</li>
+                                <li>Art Director</li>
+                                <li>Motion Graphics Artist</li>
                             </ul>
+                            <small>Tools: Adobe Creative Suite, Figma, Sketch</small>
                         </div>
                         
                         <div class="spec-card">
-                            <h3><i class="fas fa-calculator"></i> Accounting</h3>
+                            <h3><i class="fas fa-film"></i> Film & Television</h3>
                             <p>
-                                Master financial recording, auditing, taxation, and compliance. 
-                                Become the financial backbone of any organization with certified expertise.
+                                Storytelling through moving images, covering production, direction, 
+                                cinematography, editing, and post-production.
                             </p>
                             <ul>
-                                <li>Certified Accountant</li>
-                                <li>Auditor</li>
-                                <li>Tax Consultant</li>
-                                <li>Financial Controller</li>
+                                <li>Film Director</li>
+                                <li>Cinematographer</li>
+                                <li>Video Editor</li>
+                                <li>Production Designer</li>
                             </ul>
+                            <small>Tools: Premiere Pro, DaVinci Resolve, After Effects</small>
                         </div>
                         
                         <div class="spec-card">
-                            <h3><i class="fas fa-landmark"></i> Finance & Banking</h3>
+                            <h3><i class="fas fa-newspaper"></i> Journalism & Media</h3>
                             <p>
-                                Specialize in investments, banking operations, financial planning, 
-                                and risk management. Navigate the complex world of finance and capital.
+                                Information gathering, storytelling, and content creation across 
+                                print, broadcast, digital, and social media platforms.
                             </p>
                             <ul>
-                                <li>Financial Analyst</li>
-                                <li>Credit Officer</li>
-                                <li>Investment Banker</li>
-                                <li>Wealth Manager</li>
+                                <li>Journalist</li>
+                                <li>Content Strategist</li>
+                                <li>Broadcast Producer</li>
+                                <li>Social Media Manager</li>
                             </ul>
+                            <small>Platforms: Digital media, TV, radio, online</small>
                         </div>
                         
                         <div class="spec-card">
-                            <h3><i class="fas fa-chart-bar"></i> Economics</h3>
+                            <h3><i class="fas fa-gamepad"></i> Animation & Gaming</h3>
                             <p>
-                                Analyze market behavior, economic systems, and policy impacts. 
-                                Understand the forces that shape national and global economies.
+                                Creation of animated content, visual effects, and interactive 
+                                experiences for entertainment and education.
                             </p>
                             <ul>
-                                <li>Economist</li>
-                                <li>Policy Analyst</li>
-                                <li>Market Researcher</li>
-                                <li>Economic Consultant</li>
+                                <li>Animator</li>
+                                <li>Game Developer</li>
+                                <li>VFX Artist</li>
+                                <li>3D Modeler</li>
                             </ul>
+                            <small>Tools: Maya, Blender, Unity, Unreal Engine</small>
                         </div>
 
                         <div class="spec-card">
-                            <h3><i class="fas fa-lightbulb"></i> Entrepreneurship</h3>
+                            <h3><i class="fas fa-music"></i> Performing Arts</h3>
                             <p>
-                                Learn to identify opportunities, launch startups, and scale businesses. 
-                                Develop the mindset and skills to create your own successful ventures.
+                                Live artistic expression through theatre, music, dance, and 
+                                performance across stage and digital platforms.
                             </p>
                             <ul>
-                                <li>Startup Founder</li>
-                                <li>Business Consultant</li>
-                                <li>Venture Capitalist</li>
-                                <li>Innovation Manager</li>
+                                <li>Actor/Performer</li>
+                                <li>Music Producer</li>
+                                <li>Theatre Director</li>
+                                <li>Sound Designer</li>
                             </ul>
+                            <small>Platforms: Stage, recording, digital performance</small>
                         </div>
 
                         <div class="spec-card">
-                            <h3><i class="fas fa-shopping-cart"></i> Marketing</h3>
+                            <h3><i class="fas fa-camera"></i> Photography & Digital Arts</h3>
                             <p>
-                                Master brand management, digital marketing, consumer behavior, 
-                                and sales strategies to drive business growth and market presence.
+                                Visual storytelling through photography, digital illustration, 
+                                and mixed media artistic expression.
                             </p>
                             <ul>
-                                <li>Marketing Manager</li>
-                                <li>Brand Strategist</li>
-                                <li>Digital Marketer</li>
-                                <li>Sales Director</li>
+                                <li>Photographer</li>
+                                <li>Digital Artist</li>
+                                <li>Photo Editor</li>
+                                <li>Visual Artist</li>
                             </ul>
+                            <small>Tools: Lightroom, Photoshop, Procreate</small>
                         </div>
                     </div>
                 </section>
 
-                <!-- Universities -->
+                <!-- Creative Industries -->
                 <section class="blog-section">
-                    <h2><i class="fas fa-school"></i> Top Universities in Kenya</h2>
-                    <p>Leading institutions offering Business & Finance programs:</p>
+                    <h2><i class="fas fa-industry"></i> Creative Industries</h2>
+                    <div class="creative-fields">
+                        <div class="field-item">
+                            <i class="fas fa-ad"></i>
+                            <div>Advertising</div>
+                        </div>
+                        <div class="field-item">
+                            <i class="fas fa-tv"></i>
+                            <div>Broadcast Media</div>
+                        </div>
+                        <div class="field-item">
+                            <i class="fas fa-laptop"></i>
+                            <div>Digital Media</div>
+                        </div>
+                        <div class="field-item">
+                            <i class="fas fa-theater-masks"></i>
+                            <div>Entertainment</div>
+                        </div>
+                        <div class="field-item">
+                            <i class="fas fa-paint-roller"></i>
+                            <div>Fine Arts</div>
+                        </div>
+                        <div class="field-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>App Development</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Institutions -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-school"></i> Top Creative Institutions</h2>
+                    <p>Leading institutions offering creative arts and media programs:</p>
                     
                     <div class="university-list">
                         <div class="university-item">University of Nairobi</div>
                         <div class="university-item">Kenyatta University</div>
-                        <div class="university-item">Strathmore University</div>
-                        <div class="university-item">USIU Africa</div>
-                        <div class="university-item">KCA University</div>
-                        <div class="university-item">Mount Kenya University</div>
-                        <div class="university-item">Egerton University</div>
-                        <div class="university-item">Moi University</div>
+                        <div class="university-item">Daystar University</div>
+                        <div class="university-item">MultiMedia University</div>
+                        <div class="university-item">Kenya Film School</div>
+                        <div class="university-item">Buruburu Institute</div>
+                        <div class="university-item">Zetech University</div>
+                        <div class="university-item">Creative Arts Colleges</div>
                     </div>
                 </section>
 
                 <!-- Career Opportunities -->
                 <section class="blog-section">
                     <h2><i class="fas fa-briefcase"></i> Career Opportunities</h2>
-                    <p>Graduates enjoy diverse career paths with excellent progression opportunities:</p>
+                    <p>Diverse career paths with flexibility and entrepreneurial potential:</p>
                     
                     <div class="career-grid">
                         <div class="career-card">
-                            <strong><i class="fas fa-calculator"></i> Accountant</strong>
-                            <p>Manage financial records, prepare reports, and ensure regulatory compliance for organizations.</p>
-                            <small>Salary: Ksh 40,000 - 300,000+</small>
+                            <strong><i class="fas fa-paint-brush"></i> Graphic Designer</strong>
+                            <p>Create visual concepts to communicate ideas that inspire, inform, and captivate consumers.</p>
+                            <small>Earnings: Ksh 30,000 - 300,000+</small>
                         </div>
                         <div class="career-card">
-                            <strong><i class="fas fa-chart-line"></i> Financial Analyst</strong>
-                            <p>Analyze investment opportunities, assess business performance, and provide strategic recommendations.</p>
-                            <small>Salary: Ksh 60,000 - 400,000+</small>
+                            <strong><i class="fas fa-video"></i> Video Editor</strong>
+                            <p>Assemble recorded footage into finished projects for broadcasting and digital platforms.</p>
+                            <small>Earnings: Ksh 40,000 - 400,000+</small>
                         </div>
                         <div class="career-card">
-                            <strong><i class="fas fa-briefcase"></i> Business Manager</strong>
-                            <p>Oversee daily operations, lead teams, and implement business strategies to achieve organizational goals.</p>
-                            <small>Salary: Ksh 70,000 - 500,000+</small>
+                            <strong><i class="fas fa-newspaper"></i> Content Creator</strong>
+                            <p>Develop and produce content across digital platforms, building audiences and engagement.</p>
+                            <small>Earnings: Variable, up to millions</small>
                         </div>
                         <div class="career-card">
-                            <strong><i class="fas fa-hand-holding-usd"></i> Credit Officer</strong>
-                            <p>Evaluate loan applications, assess credit risk, and make lending decisions for financial institutions.</p>
-                            <small>Salary: Ksh 45,000 - 250,000+</small>
+                            <strong><i class="fas fa-microphone-alt"></i> Media Producer</strong>
+                            <p>Oversee production of media content from concept to completion across various formats.</p>
+                            <small>Earnings: Ksh 50,000 - 500,000+</small>
                         </div>
                         <div class="career-card">
-                            <strong><i class="fas fa-rocket"></i> Entrepreneur</strong>
-                            <p>Identify opportunities, start businesses, and drive innovation in various market sectors.</p>
-                            <small>Potential: Unlimited growth</small>
+                            <strong><i class="fas fa-camera"></i> Photographer</strong>
+                            <p>Capture moments and create visual stories for commercial, editorial, and artistic purposes.</p>
+                            <small>Earnings: Ksh 25,000 - 250,000+</small>
                         </div>
                         <div class="career-card">
-                            <strong><i class="fas fa-chart-bar"></i> Market Analyst</strong>
-                            <p>Research market trends, analyze consumer behavior, and provide insights for business decisions.</p>
-                            <small>Salary: Ksh 55,000 - 350,000+</small>
+                            <strong><i class="fas fa-gamepad"></i> Animator</strong>
+                            <p>Create animated sequences and characters for film, television, games, and digital media.</p>
+                            <small>Earnings: Ksh 45,000 - 450,000+</small>
                         </div>
                     </div>
                     
                     <p style="margin-top: 20px;">
-                        <strong>Industry Sectors:</strong> Graduates work across banking, manufacturing, retail, technology, 
-                        government, consulting, healthcare, and international organizations.
+                        <strong>Work Models:</strong> Full-time employment, Freelancing, Agency work, 
+                        Entrepreneurial ventures, Remote work, Project-based contracts, and 
+                        International collaborations.
                     </p>
                 </section>
 
-                <!-- Is This Right for You? -->
+                <!-- Reality Check Section -->
                 <section class="blog-section highlight">
-                    <h2><i class="fas fa-question-circle"></i> Is Business & Finance Right for You?</h2>
+                    <h2><i class="fas fa-lightbulb"></i> The Creative Reality</h2>
                     
-                    <p>This field is perfect if you:</p>
+                    <p><strong>Success in creative fields depends on:</strong></p>
                     <ul>
-                        <li>Enjoy strategic thinking and problem-solving</li>
-                        <li>Have strong analytical and numerical skills</li>
-                        <li>Are interested in leadership and management</li>
-                        <li>Want to understand how organizations work</li>
-                        <li>Are entrepreneurial and innovative</li>
-                        <li>Enjoy working with people and teams</li>
-                        <li>Want versatile career options across industries</li>
+                        <li><strong>Portfolio over Papers:</strong> Your work speaks louder than your certificate</li>
+                        <li><strong>Continuous Learning:</strong> Technology and trends evolve rapidly</li>
+                        <li><strong>Networking:</strong> Relationships open doors in creative industries</li>
+                        <li><strong>Business Skills:</strong> Creativity needs commercial savvy to thrive</li>
+                        <li><strong>Resilience:</strong> Rejection and criticism are part of the journey</li>
+                        <li><strong>Self-Motivation:</strong> Success often requires entrepreneurial drive</li>
                     </ul>
                     
                     <p style="margin-top: 20px;">
-                        <strong>Career Flexibility:</strong> Business and Finance skills are transferable across industries 
-                        and geographic locations. Whether you want to work locally or internationally, in corporate or 
-                        entrepreneurial settings, this field offers unparalleled flexibility and growth potential.
+                        <strong>The Creative Professional:</strong> While formal education provides foundation 
+                        and networks, your career will be built on your portfolio, reputation, and ability 
+                        to adapt. The digital revolution has democratized creative work—talent can come 
+                        from anywhere and reach global audiences. This means more competition but also 
+                        more opportunities than ever before.
                     </p>
                     
                     <div class="stats-section" style="margin: 25px 0 10px;">
                         <div class="stat-card">
                             <div class="stat-number">#1</div>
-                            <div class="stat-label">Most Employable Degree</div>
+                            <div class="stat-label">Most Flexible Careers</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">85%</div>
-                            <div class="stat-label">Graduate Satisfaction</div>
+                            <div class="stat-number">92%</div>
+                            <div class="stat-label">Creative Satisfaction</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">20+</div>
-                            <div class="stat-label">Industries Available</div>
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Global Marketplace</div>
                         </div>
                     </div>
                 </section>
 
                 <!-- Call to Action -->
                 <section class="blog-cta">
-                    <h2>Build Your Business Career Today</h2>
+                    <h2>Unleash Your Creativity</h2>
                     <p>
-                        Get expert guidance on choosing the right specialization, selecting the best university, 
-                        and planning your path to success in the business world.
+                        Get expert guidance on building your creative portfolio, choosing the right 
+                        specialization, and navigating the unique career paths in arts and media.
                     </p>
                     <div class="cta-buttons">
-                        <a href="https://wa.me/254742318339" class="btn-primary" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                            Chat on WhatsApp
-                        </a>
-                        <a href="https://www.csusm.edu/careers/documents/careerguide2021ada.pdf" class="btn-secondary" download="Business_Career_Guide.pdf">
-                            <i class="fas fa-file-download"></i>
-                            Download Career Guide
-                        </a>
+                        <button class="btn-primary">
+                            <i class="fas fa-palette"></i>
+                            Book Creative Consultation
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-folder-open"></i>
+                            Download Portfolio Guide
+                        </button>
                     </div>
                 </section>
 
@@ -1022,64 +1173,11 @@
 
     </main>
 
-    <!-- Booking Consultation Section -->
-    <section class="booking-consultation">
-        <div class="container">
-            <h2>Ready to Start Your Business Journey?</h2>
-            <p>Book a free consultation with our experts to discuss your academic and career goals in Business & Finance.</p>
-            <a href="https://wa.me/254742318339" class="whatsapp-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-            </a>
-        </div>
-    </section>
-
-    <style>
-        .booking-consultation {
-            background: var(--gradient-business);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .booking-consultation .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .booking-consultation h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        .booking-consultation p {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            opacity: 0.9;
-        }
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #25D366;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-        .whatsapp-btn:hover {
-            background: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-        }
-    </style>
-
     <script>
         // Simple animations and interactivity
         document.addEventListener('DOMContentLoaded', function() {
             // Add click animation to cards
-            const cards = document.querySelectorAll('.spec-card, .career-card, .req-card, .duration-card, .stat-card, .university-item');
+            const cards = document.querySelectorAll('.spec-card, .career-card, .req-card, .duration-card, .stat-card, .university-item, .creative-skill, .field-item');
             cards.forEach(card => {
                 card.addEventListener('click', function() {
                     this.style.transform = 'scale(0.98)';
@@ -1089,10 +1187,15 @@
                 });
             });
 
-            // Button click handler
+            // Button click handlers
+            document.querySelector('.btn-primary').addEventListener('click', function() {
+                alert('Redirecting to creative consultation booking...');
+                // In production: window.location.href = '/consultation/creative';
+            });
+
             document.querySelector('.btn-secondary').addEventListener('click', function() {
-                alert('Downloading business career guide PDF...');
-                // In production: window.location.href = '/downloads/business-guide.pdf';
+                alert('Downloading creative portfolio guide PDF...');
+                // In production: window.location.href = '/downloads/creative-guide.pdf';
             });
 
             // Staggered animation for sections
@@ -1111,24 +1214,46 @@
                 }
             });
 
-            // Add hover effect to specialization cards
-            const specCards = document.querySelectorAll('.spec-card');
-            specCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
+            // Add creative animations
+            const creativeSkills = document.querySelectorAll('.creative-skill');
+            creativeSkills.forEach(skill => {
+                skill.addEventListener('mouseenter', function() {
                     const icon = this.querySelector('i');
                     if (icon) {
-                        icon.style.transform = 'scale(1.2) rotate(5deg)';
+                        icon.style.transform = 'rotate(20deg) scale(1.3)';
                         icon.style.transition = 'transform 0.3s ease';
                     }
                 });
                 
-                card.addEventListener('mouseleave', function() {
+                skill.addEventListener('mouseleave', function() {
                     const icon = this.querySelector('i');
                     if (icon) {
-                        icon.style.transform = 'scale(1) rotate(0deg)';
+                        icon.style.transform = 'rotate(0deg) scale(1)';
                     }
                 });
             });
+
+            // Add color cycle animation to palette icon
+            const paletteIcon = document.querySelector('.fa-palette');
+            if (paletteIcon) {
+                const colors = ['#8B5CF6', '#EC4899', '#0EA5A4', '#F59E0B', '#EF4444'];
+                let colorIndex = 0;
+                
+                setInterval(() => {
+                    paletteIcon.style.color = colors[colorIndex];
+                    colorIndex = (colorIndex + 1) % colors.length;
+                }, 2000);
+            }
+
+            // Add subtle animation to hero background
+            const hero = document.querySelector('.blog-hero');
+            if (hero) {
+                let angle = 0;
+                setInterval(() => {
+                    angle = (angle + 0.5) % 360;
+                    hero.style.background = `linear-gradient(${angle}deg, #8B5CF6 0%, #0EA5A4 100%)`;
+                }, 50);
+            }
         });
     </script>
 

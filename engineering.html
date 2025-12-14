@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICT & Computer Science | Career Guide - Harun Consultancy</title>
+    <title>Engineering & Technical | Career Guide - Harun Consultancy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
@@ -25,6 +25,7 @@
             --white: #FFFFFF;
             --bg-light: #F7FEFD;
             --gradient-primary: linear-gradient(135deg, #0EA5A4 0%, #0C8C8B 100%);
+            --gradient-engineering: linear-gradient(135deg, #0C8C8B 0%, #2D3748 100%);
             --shadow-md: 0 4px 16px rgba(14, 165, 164, 0.12);
             --shadow-lg: 0 8px 32px rgba(14, 165, 164, 0.16);
             --radius-md: 12px;
@@ -136,7 +137,7 @@
 
         /* Blog Hero */
         .blog-hero {
-            background: var(--gradient-primary);
+            background: var(--gradient-engineering);
             color: var(--white);
             padding: 60px 40px;
             text-align: center;
@@ -281,21 +282,20 @@
         }
 
         .blog-section ul li::before {
-            content: '✓';
+            content: '⚙️';
             position: absolute;
             left: 0;
-            color: var(--primary);
-            font-weight: bold;
             font-size: 1.1rem;
         }
 
         /* Special Section */
         .blog-section.highlight {
-            background: var(--bg-light);
+            background: #F0F9F9;
             padding: 35px;
             border-radius: var(--radius-md);
             border-left: 5px solid var(--primary);
             margin-top: 40px;
+            box-shadow: var(--shadow-md);
         }
 
         .blog-section.highlight h2 {
@@ -330,7 +330,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--gradient-primary);
+            background: var(--gradient-engineering);
             transform: scaleX(0);
             transition: transform var(--transition);
         }
@@ -437,11 +437,109 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        /* Duration Cards */
+        .duration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .duration-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all var(--transition);
+        }
+
+        .duration-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .duration-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .duration-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 2px solid transparent;
+            transition: all var(--transition);
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--gray-dark);
+            font-size: 0.95rem;
+        }
+
+        /* TVET Badges */
+        .tvet-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tvet-badge {
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all var(--transition);
+        }
+
+        .tvet-badge:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
         /* ============================================
            Call to Action
         ============================================= */
         .blog-cta {
-            background: var(--gradient-primary);
+            background: var(--gradient-engineering);
             color: var(--white);
             padding: 50px 40px;
             border-radius: var(--radius-md);
@@ -506,6 +604,34 @@
             transform: translateY(-3px);
         }
 
+        /* Engineering Tools Section */
+        .tools-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .tool-item {
+            background: var(--light);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            transition: all var(--transition);
+        }
+
+        .tool-item:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+
+        .tool-item i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
         /* ============================================
            Responsive Design
         ============================================= */
@@ -532,12 +658,19 @@
 
             .specialization-grid,
             .career-grid,
-            .requirements-grid {
+            .requirements-grid,
+            .duration-grid,
+            .stats-section,
+            .tools-section {
                 grid-template-columns: 1fr;
             }
 
             .university-list {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tvet-badges {
+                justify-content: center;
             }
 
             .cta-buttons {
@@ -609,12 +742,12 @@
             <header class="blog-hero">
                 <div class="blog-hero-content">
                     <div class="course-icon">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-cogs"></i>
                     </div>
-                    <h1>ICT & Computer Science</h1>
+                    <h1>Engineering & Technical Courses</h1>
                     <p class="blog-intro">
-                        Your complete guide to careers in technology, software development, and digital innovation. 
-                        Everything you need to know as a KCSE graduate pursuing tech careers.
+                        Your complete guide to careers that build, design, and maintain the physical world. 
+                        From infrastructure to advanced technology, shape the future with practical innovation.
                     </p>
                     <div class="blog-meta">
                         <div class="meta-item">
@@ -626,8 +759,8 @@
                             <span>For: KCSE Graduates</span>
                         </div>
                         <div class="meta-item">
-                            <i class="fas fa-chart-line"></i>
-                            <span>High Demand Field</span>
+                            <i class="fas fa-hard-hat"></i>
+                            <span>Hands-on Careers</span>
                         </div>
                     </div>
                 </div>
@@ -640,217 +773,374 @@
                 <section class="blog-section">
                     <h2><i class="fas fa-info-circle"></i> Course Overview</h2>
                     <p>
-                        ICT (Information and Communication Technology) and Computer Science represent the backbone of the digital age. 
-                        This dynamic field focuses on the design, development, and implementation of computer systems, software applications, 
-                        network infrastructure, and data management solutions.
+                        Engineering and Technical courses represent the backbone of modern infrastructure 
+                        and technological advancement. These fields focus on applying scientific principles, 
+                        mathematics, and hands-on skills to design, build, and maintain everything from 
+                        buildings and machines to complex systems and advanced technology.
                     </p>
                     <p>
-                        As technology continues to transform every industry, from healthcare to finance to education, professionals in this 
-                        field are in high demand. The course is perfect for analytical thinkers, problem-solvers, and creative minds who 
-                        want to build the technologies that shape our future.
+                        As Kenya continues its development journey with projects like affordable housing, 
+                        road networks, and industrial growth, the demand for skilled engineers and technicians 
+                        has never been higher. This field is perfect for problem-solvers, innovators, and 
+                        those who want to create tangible solutions that impact society.
                     </p>
+                    
+                    <div class="stats-section">
+                        <div class="stat-card">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Employment Rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5.3%</div>
+                            <div class="stat-label">Annual Growth</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Specializations</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Institutions in Kenya</div>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- Entry Requirements -->
                 <section class="blog-section">
                     <h2><i class="fas fa-clipboard-check"></i> Entry Requirements (KCSE)</h2>
-                    <p>Different institutions have varying requirements based on the level of study:</p>
+                    <p>Different pathways into engineering and technical fields:</p>
                     
                     <div class="requirements-grid">
                         <div class="req-card">
-                            <strong>Degree Programs</strong>
+                            <strong>Engineering Degree</strong>
                             <p>Mean Grade C+ and above</p>
-                            <small>Strong Math performance required</small>
+                            <small>Strong Math & Physics required</small>
                         </div>
                         <div class="req-card">
                             <strong>Diploma Programs</strong>
                             <p>Mean Grade C or C-</p>
-                            <small>Basic Math knowledge</small>
+                            <small>Math & Physics recommended</small>
                         </div>
                         <div class="req-card">
-                            <strong>Certificate Courses</strong>
+                            <strong>Certificate/TVET</strong>
                             <p>Mean Grade D+ or D</p>
-                            <small>Entry-level technology skills</small>
+                            <small>Practical aptitude essential</small>
                         </div>
                     </div>
                     
                     <p style="margin-top: 20px;">
-                        <strong>Note:</strong> While Physics is an advantage for some specializations (like hardware engineering), 
-                        it's not mandatory for most software-focused programs. Mathematics is the key subject for this field.
+                        <strong>Key Subjects:</strong> Mathematics and Physics are crucial for engineering programs. 
+                        Chemistry is important for chemical and materials engineering. For TVET and technical 
+                        courses, practical aptitude tests may supplement academic requirements.
                     </p>
                 </section>
 
                 <!-- Duration of Study -->
                 <section class="blog-section">
                     <h2><i class="fas fa-calendar-alt"></i> Duration of Study</h2>
-                    <div class="specialization-grid">
-                        <div class="spec-card">
-                            <h3><i class="fas fa-certificate"></i> Certificate</h3>
-                            <p>6 months – 1 year of intensive practical training focusing on fundamental IT skills and software basics.</p>
+                    <div class="duration-grid">
+                        <div class="duration-card">
+                            <i class="fas fa-certificate"></i>
+                            <h4>Certificate/TVET</h4>
+                            <p>6 months – 1 year</p>
+                            <small>Specialized practical training</small>
                         </div>
-                        <div class="spec-card">
-                            <h3><i class="fas fa-graduation-cap"></i> Diploma</h3>
-                            <p>2 – 3 years combining theoretical knowledge with hands-on technical skills development.</p>
+                        <div class="duration-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Diploma</h4>
+                            <p>2 – 3 years</p>
+                            <small>Technical skills & theory</small>
                         </div>
-                        <div class="spec-card">
-                            <h3><i class="fas fa-university"></i> Bachelor's Degree</h3>
-                            <p>4 years of comprehensive study covering computer science theory, software engineering, and specializations.</p>
+                        <div class="duration-card">
+                            <i class="fas fa-university"></i>
+                            <h4>Bachelor's Degree</h4>
+                            <p>4 – 5 years</p>
+                            <small>Comprehensive engineering education</small>
                         </div>
-                        <div class="spec-card">
-                            <h3><i class="fas fa-user-graduate"></i> Master's Degree</h3>
-                            <p>1.5 – 2 years for advanced specialization and research in specific technology areas.</p>
+                        <div class="duration-card">
+                            <i class="fas fa-user-graduate"></i>
+                            <h4>Postgraduate</h4>
+                            <p>1.5 – 2 years</p>
+                            <small>Specialized engineering expertise</small>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Popular TVET Courses -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-tools"></i> Popular TVET & Technical Courses</h2>
+                    <div class="tvet-badges">
+                        <div class="tvet-badge">
+                            <i class="fas fa-wrench"></i>
+                            Plumbing
+                        </div>
+                        <div class="tvet-badge">
+                            <i class="fas fa-bolt"></i>
+                            Electrical Installation
+                        </div>
+                        <div class="tvet-badge">
+                            <i class="fas fa-car"></i>
+                            Automotive Engineering
+                        </div>
+                        <div class="tvet-badge">
+                            <i class="fas fa-fire"></i>
+                            Welding & Fabrication
+                        </div>
+                        <div class="tvet-badge">
+                            <i class="fas fa-snowflake"></i>
+                            Refrigeration
+                        </div>
+                        <div class="tvet-badge">
+                            <i class="fas fa-tachometer-alt"></i>
+                            Instrumentation
+                        </div>
+                        <div class="tvet-badge">
+                            <i class="fas fa-building"></i>
+                            Masonry
+                        </div>
+                        <div class="tvet-badge">
+                            <i class="fas fa-paint-roller"></i>
+                            Painting & Decoration
                         </div>
                     </div>
                 </section>
 
                 <!-- Specializations -->
                 <section class="blog-section">
-                    <h2><i class="fas fa-sitemap"></i> Major Branches & Specializations</h2>
+                    <h2><i class="fas fa-sitemap"></i> Main Engineering Branches</h2>
                     
                     <div class="specialization-grid">
                         <div class="spec-card">
-                            <h3><i class="fas fa-code"></i> Software Development</h3>
+                            <h3><i class="fas fa-building"></i> Civil Engineering</h3>
                             <p>
-                                Design, develop, and maintain applications, websites, and systems. 
-                                Learn programming languages, software architecture, and development methodologies.
+                                Design and construct infrastructure including roads, bridges, buildings, 
+                                and water systems that form the backbone of modern society.
                             </p>
                             <ul>
-                                <li>Web Developer</li>
-                                <li>Mobile App Developer</li>
-                                <li>Software Engineer</li>
-                                <li>Full-Stack Developer</li>
+                                <li>Civil Engineer</li>
+                                <li>Structural Engineer</li>
+                                <li>Site Supervisor</li>
+                                <li>Quantity Surveyor</li>
                             </ul>
                         </div>
                         
                         <div class="spec-card">
-                            <h3><i class="fas fa-network-wired"></i> Networking & Systems</h3>
+                            <h3><i class="fas fa-bolt"></i> Electrical Engineering</h3>
                             <p>
-                                Design, implement, and manage computer networks, servers, and IT infrastructure. 
-                                Focus on connectivity, security, and system optimization.
+                                Design, develop, and maintain electrical systems, power generation, 
+                                distribution networks, and electronic devices.
                             </p>
                             <ul>
-                                <li>Network Administrator</li>
-                                <li>Systems Engineer</li>
-                                <li>IT Support Specialist</li>
-                                <li>Cloud Administrator</li>
+                                <li>Electrical Engineer</li>
+                                <li>Power Systems Engineer</li>
+                                <li>Control Engineer</li>
+                                <li>Electronics Technician</li>
                             </ul>
                         </div>
                         
                         <div class="spec-card">
-                            <h3><i class="fas fa-shield-alt"></i> Cybersecurity</h3>
+                            <h3><i class="fas fa-cog"></i> Mechanical Engineering</h3>
                             <p>
-                                Protect systems, networks, and data from digital attacks. 
-                                Learn ethical hacking, threat analysis, and security protocols.
+                                Design, analyze, and maintain mechanical systems, machinery, 
+                                manufacturing processes, and thermal systems.
                             </p>
                             <ul>
-                                <li>Cybersecurity Analyst</li>
-                                <li>Ethical Hacker</li>
-                                <li>Security Consultant</li>
-                                <li>Information Security Officer</li>
+                                <li>Mechanical Engineer</li>
+                                <li>Plant Engineer</li>
+                                <li>Maintenance Manager</li>
+                                <li>HVAC Engineer</li>
                             </ul>
                         </div>
                         
                         <div class="spec-card">
-                            <h3><i class="fas fa-database"></i> Data, AI & Cloud</h3>
+                            <h3><i class="fas fa-robot"></i> Mechatronics Engineering</h3>
                             <p>
-                                Work with big data, artificial intelligence, and cloud platforms. 
-                                Focus on data analysis, machine learning, and cloud infrastructure.
+                                Combine mechanical, electrical, and computer engineering to create 
+                                intelligent systems, robotics, and automated solutions.
                             </p>
                             <ul>
-                                <li>Data Analyst</li>
-                                <li>Machine Learning Engineer</li>
-                                <li>Cloud Engineer</li>
-                                <li>AI Specialist</li>
+                                <li>Automation Engineer</li>
+                                <li>Robotics Engineer</li>
+                                <li>Control Systems Engineer</li>
+                                <li>Instrumentation Engineer</li>
                             </ul>
+                        </div>
+
+                        <div class="spec-card">
+                            <h3><i class="fas fa-industry"></i> Chemical Engineering</h3>
+                            <p>
+                                Design and optimize chemical processes for manufacturing, 
+                                pharmaceuticals, energy production, and materials development.
+                            </p>
+                            <ul>
+                                <li>Process Engineer</li>
+                                <li>Chemical Engineer</li>
+                                <li>Quality Control Engineer</li>
+                                <li>Petroleum Engineer</li>
+                            </ul>
+                        </div>
+
+                        <div class="spec-card">
+                            <h3><i class="fas fa-laptop-code"></i> Computer Engineering</h3>
+                            <p>
+                                Design and develop computer hardware and software systems, 
+                                embedded systems, and network infrastructure.
+                            </p>
+                            <ul>
+                                <li>Computer Hardware Engineer</li>
+                                <li>Network Engineer</li>
+                                <li>Embedded Systems Engineer</li>
+                                <li>Systems Architect</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Engineering Tools -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-toolbox"></i> Essential Engineering Skills & Tools</h2>
+                    <div class="tools-section">
+                        <div class="tool-item">
+                            <i class="fas fa-calculator"></i>
+                            <div>Mathematics</div>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-drafting-compass"></i>
+                            <div>CAD Software</div>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <div>Project Management</div>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-chart-line"></i>
+                            <div>Data Analysis</div>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-microchip"></i>
+                            <div>Technical Drawing</div>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-ruler-combined"></i>
+                            <div>Measurement</div>
                         </div>
                     </div>
                 </section>
 
                 <!-- Universities -->
                 <section class="blog-section">
-                    <h2><i class="fas fa-school"></i> Universities in Kenya</h2>
-                    <p>Top institutions offering ICT and Computer Science programs:</p>
+                    <h2><i class="fas fa-school"></i> Top Institutions in Kenya</h2>
+                    <p>Leading universities and technical institutions offering engineering programs:</p>
                     
                     <div class="university-list">
                         <div class="university-item">University of Nairobi</div>
                         <div class="university-item">JKUAT</div>
+                        <div class="university-item">Technical University of Kenya</div>
+                        <div class="university-item">Dedan Kimathi University</div>
                         <div class="university-item">Kenyatta University</div>
                         <div class="university-item">Maseno University</div>
-                        <div class="university-item">Strathmore University</div>
-                        <div class="university-item">USIU Africa</div>
-                        <div class="university-item">Mount Kenya University</div>
-                        <div class="university-item">Moi University</div>
+                        <div class="university-item">TVET Institutions</div>
+                        <div class="university-item">Polytechnics</div>
                     </div>
                 </section>
 
                 <!-- Career Opportunities -->
                 <section class="blog-section">
                     <h2><i class="fas fa-briefcase"></i> Career Opportunities</h2>
-                    <p>Graduates can pursue various rewarding careers with excellent growth potential:</p>
+                    <p>Engineers and technicians are essential across all sectors of the economy:</p>
                     
                     <div class="career-grid">
                         <div class="career-card">
-                            <strong><i class="fas fa-code"></i> Software Engineer</strong>
-                            <p>Design, develop, and maintain software applications and systems for businesses and consumers.</p>
+                            <strong><i class="fas fa-building"></i> Civil Engineer</strong>
+                            <p>Design and supervise construction of infrastructure projects including roads, bridges, and buildings.</p>
+                            <small>Salary: Ksh 60,000 - 500,000+</small>
                         </div>
                         <div class="career-card">
-                            <strong><i class="fas fa-chart-bar"></i> Data Analyst</strong>
-                            <p>Collect, process, and analyze data to support business decision-making and strategy.</p>
+                            <strong><i class="fas fa-bolt"></i> Electrical Engineer</strong>
+                            <p>Design, implement, and maintain electrical systems for residential, commercial, and industrial applications.</p>
+                            <small>Salary: Ksh 55,000 - 450,000+</small>
                         </div>
                         <div class="career-card">
-                            <strong><i class="fas fa-network-wired"></i> Network Engineer</strong>
-                            <p>Design, implement, and manage computer networks for organizations of all sizes.</p>
+                            <strong><i class="fas fa-cog"></i> Mechanical Engineer</strong>
+                            <p>Design, analyze, and maintain mechanical systems and machinery for manufacturing and production.</p>
+                            <small>Salary: Ksh 58,000 - 480,000+</small>
                         </div>
                         <div class="career-card">
-                            <strong><i class="fas fa-shield-alt"></i> Cybersecurity Analyst</strong>
-                            <p>Protect computer systems and networks from cyber threats and security breaches.</p>
+                            <strong><i class="fas fa-robot"></i> Automation Engineer</strong>
+                            <p>Design and implement automated systems for manufacturing, processing, and industrial applications.</p>
+                            <small>Salary: Ksh 70,000 - 600,000+</small>
+                        </div>
+                        <div class="career-card">
+                            <strong><i class="fas fa-tools"></i> Technical Officer</strong>
+                            <p>Install, maintain, and repair equipment and systems across various industries and sectors.</p>
+                            <small>Salary: Ksh 35,000 - 200,000+</small>
+                        </div>
+                        <div class="career-card">
+                            <strong><i class="fas fa-hard-hat"></i> Site Supervisor</strong>
+                            <p>Oversee construction projects, manage teams, and ensure quality and safety standards are met.</p>
+                            <small>Salary: Ksh 45,000 - 350,000+</small>
                         </div>
                     </div>
                     
                     <p style="margin-top: 20px;">
-                        <strong>Salary Range:</strong> Entry-level positions: Ksh 40,000 - 80,000 | 
-                        Experienced professionals: Ksh 150,000 - 500,000+ | 
-                        International opportunities: $60,000 - $150,000+
+                        <strong>Industry Sectors:</strong> Construction, Manufacturing, Energy, Transportation, 
+                        Telecommunications, Mining, Government, Consulting, and International Development.
                     </p>
                 </section>
 
                 <!-- Is This Right for You? -->
                 <section class="blog-section highlight">
-                    <h2><i class="fas fa-question-circle"></i> Is This Course Right for You?</h2>
+                    <h2><i class="fas fa-question-circle"></i> Is Engineering Right for You?</h2>
                     
-                    <p>This course is an excellent choice if you:</p>
+                    <p>This field is ideal if you:</p>
                     <ul>
-                        <li>Enjoy problem-solving and logical thinking</li>
-                        <li>Have an interest in technology and how things work</li>
-                        <li>Are patient and detail-oriented</li>
-                        <li>Enjoy continuous learning (technology evolves rapidly)</li>
+                        <li>Enjoy solving practical problems</li>
+                        <li>Have strong mathematics and science skills</li>
+                        <li>Are interested in how things work and are built</li>
+                        <li>Enjoy hands-on work and creating tangible solutions</li>
+                        <li>Have good spatial awareness and attention to detail</li>
                         <li>Want a career with high demand and good earning potential</li>
-                        <li>Are creative and enjoy building things</li>
+                        <li>Are patient and persistent in solving complex challenges</li>
                     </ul>
                     
                     <p style="margin-top: 20px;">
-                        <strong>Consider this:</strong> The field requires continuous learning as technology evolves. 
-                        If you enjoy staying updated with the latest trends and are willing to keep learning, 
-                        this can be a highly rewarding career path with opportunities both locally and internationally.
+                        <strong>The Engineer's Mindset:</strong> Engineering requires logical thinking, creativity, 
+                        and the ability to see the big picture while managing intricate details. It's a field 
+                        that rewards innovation, precision, and the satisfaction of seeing your designs become reality.
                     </p>
+                    
+                    <div class="stats-section" style="margin: 25px 0 10px;">
+                        <div class="stat-card">
+                            <div class="stat-number">#2</div>
+                            <div class="stat-label">Highest Paying Degree</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">90%</div>
+                            <div class="stat-label">Job Satisfaction</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Engineering Disciplines</div>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- Call to Action -->
                 <section class="blog-cta">
-                    <h2>Ready to Start Your Tech Journey?</h2>
+                    <h2>Build Your Engineering Future</h2>
                     <p>
-                        Get personalized guidance on course selection, university applications, 
-                        and career planning from our expert counselors.
+                        Get expert guidance on choosing the right engineering specialization, 
+                        selecting the best institution, and launching your technical career.
                     </p>
                     <div class="cta-buttons">
-                        <a href="https://wa.me/254742318339" class="btn-primary" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                            Chat on WhatsApp
-                        </a>
-                        <a href="https://www.csusm.edu/careers/documents/careerguide2021ada.pdf" class="btn-secondary" download="ICT_Career_Guide.pdf">
-                            <i class="fas fa-download"></i>
-                            Download Course Guide
-                        </a>
+                        <button class="btn-primary">
+                            <i class="fas fa-hard-hat"></i>
+                            Book Engineering Consultation
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-file-download"></i>
+                            Download Engineering Guide
+                        </button>
                     </div>
                 </section>
 
@@ -860,64 +1150,11 @@
 
     </main>
 
-    <!-- Booking Consultation Section -->
-    <section class="booking-consultation">
-        <div class="container">
-            <h2>Ready to Start Your Tech Journey?</h2>
-            <p>Book a free consultation with our experts to discuss your academic and career goals in ICT & Computer Science.</p>
-            <a href="https://wa.me/254742318339" class="whatsapp-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-            </a>
-        </div>
-    </section>
-
-    <style>
-        .booking-consultation {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .booking-consultation .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .booking-consultation h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        .booking-consultation p {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            opacity: 0.9;
-        }
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #25D366;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-        .whatsapp-btn:hover {
-            background: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-        }
-    </style>
-
     <script>
         // Simple animations and interactivity
         document.addEventListener('DOMContentLoaded', function() {
             // Add click animation to cards
-            const cards = document.querySelectorAll('.spec-card, .career-card, .req-card, .university-item');
+            const cards = document.querySelectorAll('.spec-card, .career-card, .req-card, .duration-card, .stat-card, .university-item, .tvet-badge, .tool-item');
             cards.forEach(card => {
                 card.addEventListener('click', function() {
                     this.style.transform = 'scale(0.98)';
@@ -927,10 +1164,15 @@
                 });
             });
 
-            // Button click handler for download button
+            // Button click handlers
+            document.querySelector('.btn-primary').addEventListener('click', function() {
+                alert('Redirecting to engineering consultation booking...');
+                // In production: window.location.href = '/consultation/engineering';
+            });
+
             document.querySelector('.btn-secondary').addEventListener('click', function() {
-                alert('Downloading course guide PDF...');
-                // In production: window.location.href = '/downloads/ict-guide.pdf';
+                alert('Downloading engineering career guide PDF...');
+                // In production: window.location.href = '/downloads/engineering-guide.pdf';
             });
 
             // Staggered animation for sections
@@ -947,6 +1189,43 @@
                 } else {
                     backNav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
                 }
+            });
+
+            // Add hover effect to specialization cards
+            const specCards = document.querySelectorAll('.spec-card');
+            specCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.style.transform = 'scale(1.2) rotate(5deg)';
+                        icon.style.transition = 'transform 0.3s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.style.transform = 'scale(1) rotate(0deg)';
+                    }
+                });
+            });
+
+            // TVET badges animation
+            const tvetBadges = document.querySelectorAll('.tvet-badge');
+            tvetBadges.forEach(badge => {
+                badge.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.style.transform = 'rotate(15deg) scale(1.2)';
+                    }
+                });
+                
+                badge.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.style.transform = 'rotate(0deg) scale(1)';
+                    }
+                });
             });
         });
     </script>

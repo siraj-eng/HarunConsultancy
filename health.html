@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business & Finance | Career Guide - Harun Consultancy</title>
+    <title>Health & Medical Sciences | Career Guide - Harun Consultancy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
@@ -25,7 +25,8 @@
             --white: #FFFFFF;
             --bg-light: #F7FEFD;
             --gradient-primary: linear-gradient(135deg, #0EA5A4 0%, #0C8C8B 100%);
-            --gradient-business: linear-gradient(135deg, #0C8C8B 0%, #0A7180 100%);
+            --gradient-medical: linear-gradient(135deg, #0EA5A4 0%, #1E40AF 100%);
+            --gradient-nursing: linear-gradient(135deg, #DC2626 0%, #0EA5A4 100%);
             --shadow-md: 0 4px 16px rgba(14, 165, 164, 0.12);
             --shadow-lg: 0 8px 32px rgba(14, 165, 164, 0.16);
             --radius-md: 12px;
@@ -73,7 +74,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--gradient-primary);
+            background: var(--gradient-medical);
             color: var(--white);
             text-decoration: none;
             padding: 12px 24px;
@@ -137,7 +138,7 @@
 
         /* Blog Hero */
         .blog-hero {
-            background: var(--gradient-business);
+            background: var(--gradient-medical);
             color: var(--white);
             padding: 60px 40px;
             text-align: center;
@@ -282,11 +283,9 @@
         }
 
         .blog-section ul li::before {
-            content: '✓';
+            content: '❤️';
             position: absolute;
             left: 0;
-            color: var(--primary);
-            font-weight: bold;
             font-size: 1.1rem;
         }
 
@@ -332,7 +331,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--gradient-business);
+            background: var(--gradient-medical);
             transform: scaleX(0);
             transition: transform var(--transition);
         }
@@ -475,11 +474,73 @@
             color: var(--dark);
         }
 
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 2px solid transparent;
+            transition: all var(--transition);
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--gray-dark);
+            font-size: 0.95rem;
+        }
+
+        /* Medical Badges */
+        .medical-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .medical-badge {
+            background: var(--gradient-medical);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all var(--transition);
+        }
+
+        .medical-badge:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
         /* ============================================
            Call to Action
         ============================================= */
         .blog-cta {
-            background: var(--gradient-business);
+            background: var(--gradient-medical);
             color: var(--white);
             padding: 50px 40px;
             border-radius: var(--radius-md);
@@ -544,40 +605,32 @@
             transform: translateY(-3px);
         }
 
-        /* Stats Section */
-        .stats-section {
+        /* Healthcare Specializations */
+        .healthcare-specialties {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
         }
 
-        .stat-card {
-            background: var(--white);
-            padding: 25px;
+        .specialty-item {
+            background: var(--light);
+            padding: 20px;
             border-radius: var(--radius-md);
             text-align: center;
-            box-shadow: var(--shadow-md);
-            border: 2px solid transparent;
             transition: all var(--transition);
         }
 
-        .stat-card:hover {
-            border-color: var(--primary);
+        .specialty-item:hover {
+            background: var(--primary);
+            color: var(--white);
             transform: translateY(-5px);
         }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            font-family: 'Poppins', sans-serif;
+        .specialty-item i {
+            font-size: 2rem;
             margin-bottom: 10px;
-        }
-
-        .stat-label {
-            color: var(--gray-dark);
-            font-size: 0.95rem;
+            display: block;
         }
 
         /* ============================================
@@ -608,12 +661,17 @@
             .career-grid,
             .requirements-grid,
             .duration-grid,
-            .stats-section {
+            .stats-section,
+            .healthcare-specialties {
                 grid-template-columns: 1fr;
             }
 
             .university-list {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .medical-badges {
+                justify-content: center;
             }
 
             .cta-buttons {
@@ -685,12 +743,12 @@
             <header class="blog-hero">
                 <div class="blog-hero-content">
                     <div class="course-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-heartbeat"></i>
                     </div>
-                    <h1>Business & Finance</h1>
+                    <h1>Health & Medical Sciences</h1>
                     <p class="blog-intro">
-                        Your comprehensive guide to careers in entrepreneurship, management, accounting, 
-                        economics, and financial systems. Build the skills to lead and innovate in the business world.
+                        Your comprehensive guide to careers in healthcare, medical practice, and biomedical sciences. 
+                        Join the noble profession of healing, caring, and saving lives.
                     </p>
                     <div class="blog-meta">
                         <div class="meta-item">
@@ -702,8 +760,8 @@
                             <span>For: KCSE Graduates</span>
                         </div>
                         <div class="meta-item">
-                            <i class="fas fa-briefcase"></i>
-                            <span>Versatile Career Paths</span>
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Life-Saving Careers</span>
                         </div>
                     </div>
                 </div>
@@ -716,32 +774,31 @@
                 <section class="blog-section">
                     <h2><i class="fas fa-info-circle"></i> Course Overview</h2>
                     <p>
-                        Business and Finance form the foundation of every successful organization and economy. 
-                        This dynamic field focuses on organizational management, financial systems, market analysis, 
-                        and strategic decision-making that drives growth and innovation.
+                        Health and Medical Sciences represent one of humanity's most vital professions, 
+                        focusing on disease prevention, diagnosis, treatment, and the promotion of well-being. 
+                        This field combines scientific knowledge with compassionate care to improve and save lives.
                     </p>
                     <p>
-                        From multinational corporations to local startups, every organization needs skilled professionals 
-                        who understand how to manage resources, analyze markets, and make sound financial decisions. 
-                        This course is perfect for strategic thinkers, analytical minds, and future leaders who want to 
-                        shape the business landscape.
+                        As global health challenges evolve and healthcare systems expand, the demand for 
+                        skilled medical professionals continues to grow. This field requires dedication, 
+                        empathy, scientific aptitude, and a lifelong commitment to learning and service.
                     </p>
                     
                     <div class="stats-section">
                         <div class="stat-card">
-                            <div class="stat-number">95%</div>
+                            <div class="stat-number">99%</div>
                             <div class="stat-label">Employment Rate</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">4.2%</div>
+                            <div class="stat-number">6.1%</div>
                             <div class="stat-label">Annual Growth</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">40+</div>
+                            <div class="stat-number">30+</div>
                             <div class="stat-label">Specializations</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">70+</div>
+                            <div class="stat-number">40+</div>
                             <div class="stat-label">Institutions in Kenya</div>
                         </div>
                     </div>
@@ -750,30 +807,31 @@
                 <!-- Entry Requirements -->
                 <section class="blog-section">
                     <h2><i class="fas fa-clipboard-check"></i> Entry Requirements (KCSE)</h2>
-                    <p>Different levels of study have varying requirements:</p>
+                    <p>Rigorous requirements ensure students are prepared for medical training:</p>
                     
                     <div class="requirements-grid">
                         <div class="req-card">
-                            <strong>Degree Programs</strong>
+                            <strong>Medicine Degree</strong>
+                            <p>Mean Grade B and above</p>
+                            <small>Biology, Chemistry, Physics required</small>
+                        </div>
+                        <div class="req-card">
+                            <strong>Health Sciences</strong>
                             <p>Mean Grade C+ and above</p>
-                            <small>Mathematics highly recommended</small>
+                            <small>Biology & Chemistry essential</small>
                         </div>
                         <div class="req-card">
-                            <strong>Diploma Programs</strong>
-                            <p>Mean Grade C or C-</p>
-                            <small>Business-related subjects preferred</small>
-                        </div>
-                        <div class="req-card">
-                            <strong>Certificate Courses</strong>
-                            <p>Mean Grade D+ or D</p>
-                            <small>Basic business understanding</small>
+                            <strong>Certificate/Diploma</strong>
+                            <p>Mean Grade C- or above</p>
+                            <small>Science subjects preferred</small>
                         </div>
                     </div>
                     
                     <p style="margin-top: 20px;">
-                        <strong>Important:</strong> Mathematics and Business Studies are particularly valuable for 
-                        Finance, Economics, and Accounting specializations. Some universities may require specific 
-                        subject combinations for direct entry into specialized programs.
+                        <strong>Key Subjects:</strong> Biology is mandatory for all medical programs. 
+                        Chemistry is required for most, especially Medicine, Pharmacy, and Clinical Medicine. 
+                        Physics is important for Radiology and some medical technology programs. 
+                        Mathematics is recommended for data analysis in healthcare.
                     </p>
                 </section>
 
@@ -784,235 +842,314 @@
                         <div class="duration-card">
                             <i class="fas fa-certificate"></i>
                             <h4>Certificate</h4>
-                            <p>6 months – 1 year</p>
-                            <small>Basic business principles</small>
+                            <p>1 – 2 years</p>
+                            <small>Allied health programs</small>
                         </div>
                         <div class="duration-card">
                             <i class="fas fa-graduation-cap"></i>
                             <h4>Diploma</h4>
-                            <p>2 – 3 years</p>
-                            <small>Practical business skills</small>
+                            <p>3 – 3.5 years</p>
+                            <small>Clinical training</small>
                         </div>
                         <div class="duration-card">
                             <i class="fas fa-university"></i>
                             <h4>Bachelor's Degree</h4>
-                            <p>4 years</p>
-                            <small>Comprehensive business education</small>
+                            <p>4 – 6 years</p>
+                            <small>Medical & health sciences</small>
                         </div>
                         <div class="duration-card">
-                            <i class="fas fa-user-graduate"></i>
-                            <h4>Master's (MBA)</h4>
-                            <p>1.5 – 2 years</p>
-                            <small>Advanced leadership training</small>
+                            <i class="fas fa-user-md"></i>
+                            <h4>Medicine (MBChB)</h4>
+                            <p>6 – 7 years</p>
+                            <small>Medical doctor training</small>
                         </div>
                     </div>
                 </section>
 
-                <!-- Specializations -->
+                <!-- Allied Health Programs -->
                 <section class="blog-section">
-                    <h2><i class="fas fa-sitemap"></i> Major Branches & Specializations</h2>
+                    <h2><i class="fas fa-hands-helping"></i> Allied Health Programs</h2>
+                    <div class="medical-badges">
+                        <div class="medical-badge">
+                            <i class="fas fa-x-ray"></i>
+                            Radiology Technology
+                        </div>
+                        <div class="medical-badge">
+                            <i class="fas fa-microscope"></i>
+                            Laboratory Technology
+                        </div>
+                        <div class="medical-badge">
+                            <i class="fas fa-teeth"></i>
+                            Dental Technology
+                        </div>
+                        <div class="medical-badge">
+                            <i class="fas fa-ambulance"></i>
+                            Emergency Medicine
+                        </div>
+                        <div class="medical-badge">
+                            <i class="fas fa-prescription-bottle-alt"></i>
+                            Pharmaceutical Technology
+                        </div>
+                        <div class="medical-badge">
+                            <i class="fas fa-heart"></i>
+                            Cardiovascular Technology
+                        </div>
+                        <div class="medical-badge">
+                            <i class="fas fa-brain"></i>
+                            Neurology Technology
+                        </div>
+                        <div class="medical-badge">
+                            <i class="fas fa-child"></i>
+                            Pediatric Care
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main Specializations -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-sitemap"></i> Main Medical Branches</h2>
                     
                     <div class="specialization-grid">
                         <div class="spec-card">
-                            <h3><i class="fas fa-briefcase"></i> Business Administration</h3>
+                            <h3><i class="fas fa-user-md"></i> Medicine & Surgery</h3>
                             <p>
-                                Master organizational leadership, strategic planning, and operational management. 
-                                Learn to lead teams and drive business growth across various industries.
+                                Comprehensive medical training to become licensed physicians 
+                                who diagnose, treat, and manage diseases across all specialties.
                             </p>
                             <ul>
-                                <li>Business Manager</li>
-                                <li>Operations Director</li>
-                                <li>Project Manager</li>
-                                <li>Human Resources Manager</li>
+                                <li>Medical Doctor (MD)</li>
+                                <li>Surgeon</li>
+                                <li>Medical Officer</li>
+                                <li>Consultant Physician</li>
                             </ul>
+                            <small>Duration: 6-7 years + internship</small>
                         </div>
                         
                         <div class="spec-card">
-                            <h3><i class="fas fa-calculator"></i> Accounting</h3>
+                            <h3><i class="fas fa-user-nurse"></i> Nursing</h3>
                             <p>
-                                Master financial recording, auditing, taxation, and compliance. 
-                                Become the financial backbone of any organization with certified expertise.
+                                Holistic patient care, clinical support, health education, 
+                                and community health promotion across all healthcare settings.
                             </p>
                             <ul>
-                                <li>Certified Accountant</li>
-                                <li>Auditor</li>
-                                <li>Tax Consultant</li>
-                                <li>Financial Controller</li>
+                                <li>Registered Nurse</li>
+                                <li>Nurse Practitioner</li>
+                                <li>Midwife</li>
+                                <li>Nurse Educator</li>
                             </ul>
+                            <small>Duration: 3-4 years + registration</small>
                         </div>
                         
                         <div class="spec-card">
-                            <h3><i class="fas fa-landmark"></i> Finance & Banking</h3>
+                            <h3><i class="fas fa-stethoscope"></i> Clinical Medicine</h3>
                             <p>
-                                Specialize in investments, banking operations, financial planning, 
-                                and risk management. Navigate the complex world of finance and capital.
+                                Training for clinical officers who provide medical care, 
+                                diagnosis, and treatment in hospitals and community health centers.
                             </p>
                             <ul>
-                                <li>Financial Analyst</li>
-                                <li>Credit Officer</li>
-                                <li>Investment Banker</li>
-                                <li>Wealth Manager</li>
+                                <li>Clinical Officer</li>
+                                <li>Medical Assistant</li>
+                                <li>Surgical Assistant</li>
+                                <li>Anesthesia Assistant</li>
                             </ul>
+                            <small>Duration: 3-4 years + internship</small>
                         </div>
                         
                         <div class="spec-card">
-                            <h3><i class="fas fa-chart-bar"></i> Economics</h3>
+                            <h3><i class="fas fa-prescription-bottle-alt"></i> Pharmacy</h3>
                             <p>
-                                Analyze market behavior, economic systems, and policy impacts. 
-                                Understand the forces that shape national and global economies.
+                                Study of medications, their effects, formulation, 
+                                dispensing, and management of pharmaceutical services.
                             </p>
                             <ul>
-                                <li>Economist</li>
-                                <li>Policy Analyst</li>
-                                <li>Market Researcher</li>
-                                <li>Economic Consultant</li>
+                                <li>Pharmacist</li>
+                                <li>Pharmaceutical Scientist</li>
+                                <li>Drug Inspector</li>
+                                <li>Hospital Pharmacist</li>
                             </ul>
+                            <small>Duration: 4-5 years + internship</small>
                         </div>
 
                         <div class="spec-card">
-                            <h3><i class="fas fa-lightbulb"></i> Entrepreneurship</h3>
+                            <h3><i class="fas fa-users"></i> Public Health</h3>
                             <p>
-                                Learn to identify opportunities, launch startups, and scale businesses. 
-                                Develop the mindset and skills to create your own successful ventures.
+                                Focus on population health, disease prevention, health policy, 
+                                epidemiology, and community health management.
                             </p>
                             <ul>
-                                <li>Startup Founder</li>
-                                <li>Business Consultant</li>
-                                <li>Venture Capitalist</li>
-                                <li>Innovation Manager</li>
+                                <li>Public Health Officer</li>
+                                <li>Epidemiologist</li>
+                                <li>Health Educator</li>
+                                <li>Health Policy Analyst</li>
                             </ul>
+                            <small>Duration: 4 years</small>
                         </div>
 
                         <div class="spec-card">
-                            <h3><i class="fas fa-shopping-cart"></i> Marketing</h3>
+                            <h3><i class="fas fa-teeth"></i> Dentistry</h3>
                             <p>
-                                Master brand management, digital marketing, consumer behavior, 
-                                and sales strategies to drive business growth and market presence.
+                                Diagnosis, prevention, and treatment of oral diseases, 
+                                dental surgery, and oral health promotion.
                             </p>
                             <ul>
-                                <li>Marketing Manager</li>
-                                <li>Brand Strategist</li>
-                                <li>Digital Marketer</li>
-                                <li>Sales Director</li>
+                                <li>Dentist</li>
+                                <li>Oral Surgeon</li>
+                                <li>Orthodontist</li>
+                                <li>Dental Public Health</li>
                             </ul>
+                            <small>Duration: 5-6 years</small>
                         </div>
                     </div>
                 </section>
 
-                <!-- Universities -->
+                <!-- Medical Specialties -->
                 <section class="blog-section">
-                    <h2><i class="fas fa-school"></i> Top Universities in Kenya</h2>
-                    <p>Leading institutions offering Business & Finance programs:</p>
+                    <h2><i class="fas fa-star-of-life"></i> Medical Specialties</h2>
+                    <div class="healthcare-specialties">
+                        <div class="specialty-item">
+                            <i class="fas fa-baby"></i>
+                            <div>Pediatrics</div>
+                        </div>
+                        <div class="specialty-item">
+                            <i class="fas fa-female"></i>
+                            <div>Obstetrics & Gynecology</div>
+                        </div>
+                        <div class="specialty-item">
+                            <i class="fas fa-brain"></i>
+                            <div>Neurology</div>
+                        </div>
+                        <div class="specialty-item">
+                            <i class="fas fa-heart"></i>
+                            <div>Cardiology</div>
+                        </div>
+                        <div class="specialty-item">
+                            <i class="fas fa-lungs"></i>
+                            <div>Pulmonology</div>
+                        </div>
+                        <div class="specialty-item">
+                            <i class="fas fa-bone"></i>
+                            <div>Orthopedics</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Institutions -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-school"></i> Top Medical Institutions in Kenya</h2>
+                    <p>Leading universities and medical colleges offering health sciences:</p>
                     
                     <div class="university-list">
                         <div class="university-item">University of Nairobi</div>
                         <div class="university-item">Kenyatta University</div>
-                        <div class="university-item">Strathmore University</div>
-                        <div class="university-item">USIU Africa</div>
-                        <div class="university-item">KCA University</div>
+                        <div class="university-item">Moi University</div>
+                        <div class="university-item">KMTC</div>
                         <div class="university-item">Mount Kenya University</div>
                         <div class="university-item">Egerton University</div>
-                        <div class="university-item">Moi University</div>
+                        <div class="university-item">JKUAT</div>
+                        <div class="university-item">Maseno University</div>
                     </div>
                 </section>
 
                 <!-- Career Opportunities -->
                 <section class="blog-section">
                     <h2><i class="fas fa-briefcase"></i> Career Opportunities</h2>
-                    <p>Graduates enjoy diverse career paths with excellent progression opportunities:</p>
+                    <p>Healthcare professionals serve in diverse settings with excellent progression:</p>
                     
                     <div class="career-grid">
                         <div class="career-card">
-                            <strong><i class="fas fa-calculator"></i> Accountant</strong>
-                            <p>Manage financial records, prepare reports, and ensure regulatory compliance for organizations.</p>
-                            <small>Salary: Ksh 40,000 - 300,000+</small>
+                            <strong><i class="fas fa-user-md"></i> Medical Doctor</strong>
+                            <p>Diagnose and treat illnesses, manage patient care, and provide medical leadership in healthcare settings.</p>
+                            <small>Salary: Ksh 150,000 - 1,000,000+</small>
                         </div>
                         <div class="career-card">
-                            <strong><i class="fas fa-chart-line"></i> Financial Analyst</strong>
-                            <p>Analyze investment opportunities, assess business performance, and provide strategic recommendations.</p>
-                            <small>Salary: Ksh 60,000 - 400,000+</small>
+                            <strong><i class="fas fa-user-nurse"></i> Registered Nurse</strong>
+                            <p>Provide patient care, administer medications, monitor health status, and support patients and families.</p>
+                            <small>Salary: Ksh 50,000 - 400,000+</small>
                         </div>
                         <div class="career-card">
-                            <strong><i class="fas fa-briefcase"></i> Business Manager</strong>
-                            <p>Oversee daily operations, lead teams, and implement business strategies to achieve organizational goals.</p>
+                            <strong><i class="fas fa-stethoscope"></i> Clinical Officer</strong>
+                            <p>Provide primary healthcare, diagnose common illnesses, and manage treatment in clinical settings.</p>
+                            <small>Salary: Ksh 60,000 - 350,000+</small>
+                        </div>
+                        <div class="career-card">
+                            <strong><i class="fas fa-prescription-bottle-alt"></i> Pharmacist</strong>
+                            <p>Dispense medications, provide drug information, ensure safe medication use, and manage pharmacy services.</p>
                             <small>Salary: Ksh 70,000 - 500,000+</small>
                         </div>
                         <div class="career-card">
-                            <strong><i class="fas fa-hand-holding-usd"></i> Credit Officer</strong>
-                            <p>Evaluate loan applications, assess credit risk, and make lending decisions for financial institutions.</p>
-                            <small>Salary: Ksh 45,000 - 250,000+</small>
+                            <strong><i class="fas fa-users"></i> Public Health Officer</strong>
+                            <p>Develop health programs, monitor disease outbreaks, and promote community health initiatives.</p>
+                            <small>Salary: Ksh 55,000 - 400,000+</small>
                         </div>
                         <div class="career-card">
-                            <strong><i class="fas fa-rocket"></i> Entrepreneur</strong>
-                            <p>Identify opportunities, start businesses, and drive innovation in various market sectors.</p>
-                            <small>Potential: Unlimited growth</small>
-                        </div>
-                        <div class="career-card">
-                            <strong><i class="fas fa-chart-bar"></i> Market Analyst</strong>
-                            <p>Research market trends, analyze consumer behavior, and provide insights for business decisions.</p>
-                            <small>Salary: Ksh 55,000 - 350,000+</small>
+                            <strong><i class="fas fa-microscope"></i> Lab Technologist</strong>
+                            <p>Conduct medical tests, analyze samples, and provide diagnostic information for patient care.</p>
+                            <small>Salary: Ksh 45,000 - 300,000+</small>
                         </div>
                     </div>
                     
                     <p style="margin-top: 20px;">
-                        <strong>Industry Sectors:</strong> Graduates work across banking, manufacturing, retail, technology, 
-                        government, consulting, healthcare, and international organizations.
+                        <strong>Work Settings:</strong> Hospitals, Clinics, Community Health Centers, Research Institutions, 
+                        Pharmaceutical Companies, Public Health Organizations, NGOs, International Health Agencies, 
+                        and Private Practice.
                     </p>
                 </section>
 
                 <!-- Is This Right for You? -->
                 <section class="blog-section highlight">
-                    <h2><i class="fas fa-question-circle"></i> Is Business & Finance Right for You?</h2>
+                    <h2><i class="fas fa-question-circle"></i> Is Healthcare Right for You?</h2>
                     
-                    <p>This field is perfect if you:</p>
+                    <p>This noble profession calls for individuals who:</p>
                     <ul>
-                        <li>Enjoy strategic thinking and problem-solving</li>
-                        <li>Have strong analytical and numerical skills</li>
-                        <li>Are interested in leadership and management</li>
-                        <li>Want to understand how organizations work</li>
-                        <li>Are entrepreneurial and innovative</li>
-                        <li>Enjoy working with people and teams</li>
-                        <li>Want versatile career options across industries</li>
+                        <li>Have genuine compassion for others</li>
+                        <li>Excel in biology and sciences</li>
+                        <li>Can handle pressure and emergencies</li>
+                        <li>Are detail-oriented and meticulous</li>
+                        <li>Have strong communication skills</li>
+                        <li>Value lifelong learning</li>
+                        <li>Can work long and irregular hours</li>
+                        <li>Maintain professionalism under stress</li>
                     </ul>
                     
                     <p style="margin-top: 20px;">
-                        <strong>Career Flexibility:</strong> Business and Finance skills are transferable across industries 
-                        and geographic locations. Whether you want to work locally or internationally, in corporate or 
-                        entrepreneurial settings, this field offers unparalleled flexibility and growth potential.
+                        <strong>The Healthcare Professional:</strong> Medical careers require emotional resilience, 
+                        scientific aptitude, and unwavering commitment to ethical practice. The rewards include 
+                        job security, meaningful work, continuous learning, and the profound satisfaction of 
+                        making a difference in people's lives.
                     </p>
                     
                     <div class="stats-section" style="margin: 25px 0 10px;">
                         <div class="stat-card">
                             <div class="stat-number">#1</div>
-                            <div class="stat-label">Most Employable Degree</div>
+                            <div class="stat-label">Most Respected Profession</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">85%</div>
-                            <div class="stat-label">Graduate Satisfaction</div>
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Career Satisfaction</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">20+</div>
-                            <div class="stat-label">Industries Available</div>
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Countries for Work</div>
                         </div>
                     </div>
                 </section>
 
                 <!-- Call to Action -->
                 <section class="blog-cta">
-                    <h2>Build Your Business Career Today</h2>
+                    <h2>Begin Your Medical Career Journey</h2>
                     <p>
-                        Get expert guidance on choosing the right specialization, selecting the best university, 
-                        and planning your path to success in the business world.
+                        Get expert guidance on medical school applications, choosing the right specialization, 
+                        and navigating your path to becoming a healthcare professional.
                     </p>
                     <div class="cta-buttons">
-                        <a href="https://wa.me/254742318339" class="btn-primary" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                            Chat on WhatsApp
-                        </a>
-                        <a href="https://www.csusm.edu/careers/documents/careerguide2021ada.pdf" class="btn-secondary" download="Business_Career_Guide.pdf">
-                            <i class="fas fa-file-download"></i>
-                            Download Career Guide
-                        </a>
+                        <button class="btn-primary">
+                            <i class="fas fa-stethoscope"></i>
+                            Book Medical Consultation
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-file-medical-alt"></i>
+                            Download Medical Guide
+                        </button>
                     </div>
                 </section>
 
@@ -1022,64 +1159,11 @@
 
     </main>
 
-    <!-- Booking Consultation Section -->
-    <section class="booking-consultation">
-        <div class="container">
-            <h2>Ready to Start Your Business Journey?</h2>
-            <p>Book a free consultation with our experts to discuss your academic and career goals in Business & Finance.</p>
-            <a href="https://wa.me/254742318339" class="whatsapp-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-            </a>
-        </div>
-    </section>
-
-    <style>
-        .booking-consultation {
-            background: var(--gradient-business);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .booking-consultation .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .booking-consultation h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        .booking-consultation p {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            opacity: 0.9;
-        }
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #25D366;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-        .whatsapp-btn:hover {
-            background: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-        }
-    </style>
-
     <script>
         // Simple animations and interactivity
         document.addEventListener('DOMContentLoaded', function() {
             // Add click animation to cards
-            const cards = document.querySelectorAll('.spec-card, .career-card, .req-card, .duration-card, .stat-card, .university-item');
+            const cards = document.querySelectorAll('.spec-card, .career-card, .req-card, .duration-card, .stat-card, .university-item, .medical-badge, .specialty-item');
             cards.forEach(card => {
                 card.addEventListener('click', function() {
                     this.style.transform = 'scale(0.98)';
@@ -1089,10 +1173,15 @@
                 });
             });
 
-            // Button click handler
+            // Button click handlers
+            document.querySelector('.btn-primary').addEventListener('click', function() {
+                alert('Redirecting to medical consultation booking...');
+                // In production: window.location.href = '/consultation/medical';
+            });
+
             document.querySelector('.btn-secondary').addEventListener('click', function() {
-                alert('Downloading business career guide PDF...');
-                // In production: window.location.href = '/downloads/business-guide.pdf';
+                alert('Downloading medical career guide PDF...');
+                // In production: window.location.href = '/downloads/medical-guide.pdf';
             });
 
             // Staggered animation for sections
@@ -1111,24 +1200,35 @@
                 }
             });
 
-            // Add hover effect to specialization cards
-            const specCards = document.querySelectorAll('.spec-card');
-            specCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
+            // Add hover effect to medical badges
+            const medicalBadges = document.querySelectorAll('.medical-badge');
+            medicalBadges.forEach(badge => {
+                badge.addEventListener('mouseenter', function() {
                     const icon = this.querySelector('i');
                     if (icon) {
-                        icon.style.transform = 'scale(1.2) rotate(5deg)';
+                        icon.style.transform = 'scale(1.3)';
                         icon.style.transition = 'transform 0.3s ease';
                     }
                 });
                 
-                card.addEventListener('mouseleave', function() {
+                badge.addEventListener('mouseleave', function() {
                     const icon = this.querySelector('i');
                     if (icon) {
-                        icon.style.transform = 'scale(1) rotate(0deg)';
+                        icon.style.transform = 'scale(1)';
                     }
                 });
             });
+
+            // Add heartbeat animation to heart icon
+            const heartIcon = document.querySelector('.fa-heartbeat');
+            if (heartIcon) {
+                setInterval(() => {
+                    heartIcon.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        heartIcon.style.transform = 'scale(1)';
+                    }, 300);
+                }, 2000);
+            }
         });
     </script>
 

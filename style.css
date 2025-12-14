@@ -886,6 +886,51 @@ nav.scrolled {
     line-height: 1.6;
 }
 
+.course-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.course-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.course-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(14, 165, 164, 0.2);
+}
+
+.course-btn i {
+    margin-right: 8px;
+}
+
+.download-btn {
+    background: #f0f9ff;
+    color: var(--primary);
+    border: 1px solid var(--primary-light);
+}
+
+.download-btn:hover {
+    background: #e0f2fe;
+    color: var(--primary-dark);
+    border-color: var(--primary);
+}
+
 .course-meta {
     display: flex;
     gap: 20px;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business & Finance | Career Guide - Harun Consultancy</title>
+    <title>Hospitality & Tourism | Career Guide - Harun Consultancy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
@@ -25,7 +25,8 @@
             --white: #FFFFFF;
             --bg-light: #F7FEFD;
             --gradient-primary: linear-gradient(135deg, #0EA5A4 0%, #0C8C8B 100%);
-            --gradient-business: linear-gradient(135deg, #0C8C8B 0%, #0A7180 100%);
+            --gradient-hospitality: linear-gradient(135deg, #0EA5A4 0%, #059669 100%);
+            --gradient-tourism: linear-gradient(135deg, #059669 0%, #0C8C8B 100%);
             --shadow-md: 0 4px 16px rgba(14, 165, 164, 0.12);
             --shadow-lg: 0 8px 32px rgba(14, 165, 164, 0.16);
             --radius-md: 12px;
@@ -73,7 +74,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--gradient-primary);
+            background: var(--gradient-hospitality);
             color: var(--white);
             text-decoration: none;
             padding: 12px 24px;
@@ -137,7 +138,7 @@
 
         /* Blog Hero */
         .blog-hero {
-            background: var(--gradient-business);
+            background: var(--gradient-hospitality);
             color: var(--white);
             padding: 60px 40px;
             text-align: center;
@@ -282,11 +283,9 @@
         }
 
         .blog-section ul li::before {
-            content: '✓';
+            content: '✨';
             position: absolute;
             left: 0;
-            color: var(--primary);
-            font-weight: bold;
             font-size: 1.1rem;
         }
 
@@ -332,7 +331,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--gradient-business);
+            background: var(--gradient-hospitality);
             transform: scaleX(0);
             transition: transform var(--transition);
         }
@@ -475,11 +474,73 @@
             color: var(--dark);
         }
 
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 2px solid transparent;
+            transition: all var(--transition);
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--gray-dark);
+            font-size: 0.95rem;
+        }
+
+        /* Hospitality Badges */
+        .hospitality-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .hospitality-badge {
+            background: var(--gradient-hospitality);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all var(--transition);
+        }
+
+        .hospitality-badge:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
         /* ============================================
            Call to Action
         ============================================= */
         .blog-cta {
-            background: var(--gradient-business);
+            background: var(--gradient-hospitality);
             color: var(--white);
             padding: 50px 40px;
             border-radius: var(--radius-md);
@@ -544,40 +605,32 @@
             transform: translateY(-3px);
         }
 
-        /* Stats Section */
-        .stats-section {
+        /* Tourism Destinations */
+        .destinations-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
         }
 
-        .stat-card {
-            background: var(--white);
-            padding: 25px;
+        .destination-item {
+            background: var(--light);
+            padding: 20px;
             border-radius: var(--radius-md);
             text-align: center;
-            box-shadow: var(--shadow-md);
-            border: 2px solid transparent;
             transition: all var(--transition);
         }
 
-        .stat-card:hover {
-            border-color: var(--primary);
+        .destination-item:hover {
+            background: var(--primary);
+            color: var(--white);
             transform: translateY(-5px);
         }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            font-family: 'Poppins', sans-serif;
+        .destination-item i {
+            font-size: 2rem;
             margin-bottom: 10px;
-        }
-
-        .stat-label {
-            color: var(--gray-dark);
-            font-size: 0.95rem;
+            display: block;
         }
 
         /* ============================================
@@ -608,12 +661,17 @@
             .career-grid,
             .requirements-grid,
             .duration-grid,
-            .stats-section {
+            .stats-section,
+            .destinations-section {
                 grid-template-columns: 1fr;
             }
 
             .university-list {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hospitality-badges {
+                justify-content: center;
             }
 
             .cta-buttons {
@@ -685,12 +743,12 @@
             <header class="blog-hero">
                 <div class="blog-hero-content">
                     <div class="course-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-concierge-bell"></i>
                     </div>
-                    <h1>Business & Finance</h1>
+                    <h1>Hospitality & Tourism</h1>
                     <p class="blog-intro">
-                        Your comprehensive guide to careers in entrepreneurship, management, accounting, 
-                        economics, and financial systems. Build the skills to lead and innovate in the business world.
+                        Your passport to exciting careers in hotels, travel, culinary arts, and tourism management. 
+                        Create memorable experiences and explore the world while building your career.
                     </p>
                     <div class="blog-meta">
                         <div class="meta-item">
@@ -702,8 +760,8 @@
                             <span>For: KCSE Graduates</span>
                         </div>
                         <div class="meta-item">
-                            <i class="fas fa-briefcase"></i>
-                            <span>Versatile Career Paths</span>
+                            <i class="fas fa-globe-africa"></i>
+                            <span>Global Opportunities</span>
                         </div>
                     </div>
                 </div>
@@ -716,33 +774,33 @@
                 <section class="blog-section">
                     <h2><i class="fas fa-info-circle"></i> Course Overview</h2>
                     <p>
-                        Business and Finance form the foundation of every successful organization and economy. 
-                        This dynamic field focuses on organizational management, financial systems, market analysis, 
-                        and strategic decision-making that drives growth and innovation.
+                        Hospitality and Tourism is the dynamic industry dedicated to creating exceptional experiences 
+                        for guests, travelers, and customers. This field combines business management with service 
+                        excellence, cultural understanding, and operational expertise to deliver memorable experiences.
                     </p>
                     <p>
-                        From multinational corporations to local startups, every organization needs skilled professionals 
-                        who understand how to manage resources, analyze markets, and make sound financial decisions. 
-                        This course is perfect for strategic thinkers, analytical minds, and future leaders who want to 
-                        shape the business landscape.
+                        As one of the world's largest and fastest-growing industries, hospitality and tourism 
+                        offers diverse career paths that combine professional growth with exciting travel opportunities. 
+                        Kenya's position as a top tourist destination makes this field particularly promising for 
+                        students seeking dynamic, people-oriented careers.
                     </p>
                     
                     <div class="stats-section">
                         <div class="stat-card">
-                            <div class="stat-number">95%</div>
-                            <div class="stat-label">Employment Rate</div>
+                            <div class="stat-number">1 in 10</div>
+                            <div class="stat-label">Global Jobs</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">4.2%</div>
+                            <div class="stat-number">4.5%</div>
                             <div class="stat-label">Annual Growth</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">40+</div>
+                            <div class="stat-number">15+</div>
                             <div class="stat-label">Specializations</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">70+</div>
-                            <div class="stat-label">Institutions in Kenya</div>
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Countries to Work</div>
                         </div>
                     </div>
                 </section>
@@ -750,30 +808,31 @@
                 <!-- Entry Requirements -->
                 <section class="blog-section">
                     <h2><i class="fas fa-clipboard-check"></i> Entry Requirements (KCSE)</h2>
-                    <p>Different levels of study have varying requirements:</p>
+                    <p>Accessible pathways into the exciting world of hospitality and tourism:</p>
                     
                     <div class="requirements-grid">
                         <div class="req-card">
                             <strong>Degree Programs</strong>
                             <p>Mean Grade C+ and above</p>
-                            <small>Mathematics highly recommended</small>
+                            <small>Languages preferred</small>
                         </div>
                         <div class="req-card">
                             <strong>Diploma Programs</strong>
                             <p>Mean Grade C or C-</p>
-                            <small>Business-related subjects preferred</small>
+                            <small>Customer service interest</small>
                         </div>
                         <div class="req-card">
                             <strong>Certificate Courses</strong>
                             <p>Mean Grade D+ or D</p>
-                            <small>Basic business understanding</small>
+                            <small>Passion for service</small>
                         </div>
                     </div>
                     
                     <p style="margin-top: 20px;">
-                        <strong>Important:</strong> Mathematics and Business Studies are particularly valuable for 
-                        Finance, Economics, and Accounting specializations. Some universities may require specific 
-                        subject combinations for direct entry into specialized programs.
+                        <strong>Key Attributes:</strong> While formal academic requirements are flexible, successful 
+                        hospitality professionals typically demonstrate excellent communication skills, cultural 
+                        awareness, problem-solving abilities, and a genuine passion for service. Foreign language 
+                        skills (especially English, French, German, Spanish, Chinese) are highly valued.
                     </p>
                 </section>
 
@@ -785,234 +844,313 @@
                             <i class="fas fa-certificate"></i>
                             <h4>Certificate</h4>
                             <p>6 months – 1 year</p>
-                            <small>Basic business principles</small>
+                            <small>Basic hospitality skills</small>
                         </div>
                         <div class="duration-card">
                             <i class="fas fa-graduation-cap"></i>
                             <h4>Diploma</h4>
                             <p>2 – 3 years</p>
-                            <small>Practical business skills</small>
+                            <small>Specialized training</small>
                         </div>
                         <div class="duration-card">
                             <i class="fas fa-university"></i>
                             <h4>Bachelor's Degree</h4>
-                            <p>4 years</p>
-                            <small>Comprehensive business education</small>
+                            <p>3 – 4 years</p>
+                            <small>Management education</small>
                         </div>
                         <div class="duration-card">
-                            <i class="fas fa-user-graduate"></i>
-                            <h4>Master's (MBA)</h4>
-                            <p>1.5 – 2 years</p>
-                            <small>Advanced leadership training</small>
+                            <i class="fas fa-plane"></i>
+                            <h4>Specialized Training</h4>
+                            <p>3 – 6 months</p>
+                            <small>Airline, cruise, etc.</small>
                         </div>
                     </div>
                 </section>
 
-                <!-- Specializations -->
+                <!-- Hospitality Skills -->
                 <section class="blog-section">
-                    <h2><i class="fas fa-sitemap"></i> Major Branches & Specializations</h2>
+                    <h2><i class="fas fa-star"></i> Essential Hospitality Skills</h2>
+                    <div class="hospitality-badges">
+                        <div class="hospitality-badge">
+                            <i class="fas fa-comments"></i>
+                            Communication
+                        </div>
+                        <div class="hospitality-badge">
+                            <i class="fas fa-hands-helping"></i>
+                            Customer Service
+                        </div>
+                        <div class="hospitality-badge">
+                            <i class="fas fa-language"></i>
+                            Multilingual
+                        </div>
+                        <div class="hospitality-badge">
+                            <i class="fas fa-smile"></i>
+                            Professionalism
+                        </div>
+                        <div class="hospitality-badge">
+                            <i class="fas fa-lightbulb"></i>
+                            Problem-Solving
+                        </div>
+                        <div class="hospitality-badge">
+                            <i class="fas fa-users"></i>
+                            Teamwork
+                        </div>
+                        <div class="hospitality-badge">
+                            <i class="fas fa-clock"></i>
+                            Time Management
+                        </div>
+                        <div class="hospitality-badge">
+                            <i class="fas fa-heart"></i>
+                            Passion for Service
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main Specializations -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-sitemap"></i> Main Specializations</h2>
                     
                     <div class="specialization-grid">
                         <div class="spec-card">
-                            <h3><i class="fas fa-briefcase"></i> Business Administration</h3>
+                            <h3><i class="fas fa-hotel"></i> Hotel Management</h3>
                             <p>
-                                Master organizational leadership, strategic planning, and operational management. 
-                                Learn to lead teams and drive business growth across various industries.
+                                Comprehensive training in hotel operations, front office management, 
+                                housekeeping, food & beverage, and hotel marketing and sales.
                             </p>
                             <ul>
-                                <li>Business Manager</li>
-                                <li>Operations Director</li>
-                                <li>Project Manager</li>
-                                <li>Human Resources Manager</li>
+                                <li>Hotel Manager</li>
+                                <li>Front Office Manager</li>
+                                <li>Housekeeping Supervisor</li>
+                                <li>Revenue Manager</li>
                             </ul>
+                            <small>Focus: Luxury hotels, resorts, boutique hotels</small>
                         </div>
                         
                         <div class="spec-card">
-                            <h3><i class="fas fa-calculator"></i> Accounting</h3>
+                            <h3><i class="fas fa-utensils"></i> Culinary Arts</h3>
                             <p>
-                                Master financial recording, auditing, taxation, and compliance. 
-                                Become the financial backbone of any organization with certified expertise.
+                                Professional training in food preparation, kitchen management, 
+                                menu planning, nutrition, and restaurant operations.
                             </p>
                             <ul>
-                                <li>Certified Accountant</li>
-                                <li>Auditor</li>
-                                <li>Tax Consultant</li>
-                                <li>Financial Controller</li>
+                                <li>Executive Chef</li>
+                                <li>Sous Chef</li>
+                                <li>Pastry Chef</li>
+                                <li>Food & Beverage Manager</li>
                             </ul>
+                            <small>Focus: Fine dining, restaurants, catering</small>
                         </div>
                         
                         <div class="spec-card">
-                            <h3><i class="fas fa-landmark"></i> Finance & Banking</h3>
+                            <h3><i class="fas fa-plane-departure"></i> Tourism Management</h3>
                             <p>
-                                Specialize in investments, banking operations, financial planning, 
-                                and risk management. Navigate the complex world of finance and capital.
+                                Study of tourism systems, destination management, 
+                                tour operations, travel agency management, and sustainable tourism.
                             </p>
                             <ul>
-                                <li>Financial Analyst</li>
-                                <li>Credit Officer</li>
-                                <li>Investment Banker</li>
-                                <li>Wealth Manager</li>
+                                <li>Tourism Manager</li>
+                                <li>Travel Consultant</li>
+                                <li>Tour Operator</li>
+                                <li>Destination Specialist</li>
                             </ul>
+                            <small>Focus: Travel agencies, tour companies, DMOs</small>
                         </div>
                         
                         <div class="spec-card">
-                            <h3><i class="fas fa-chart-bar"></i> Economics</h3>
+                            <h3><i class="fas fa-glass-cheers"></i> Events Management</h3>
                             <p>
-                                Analyze market behavior, economic systems, and policy impacts. 
-                                Understand the forces that shape national and global economies.
+                                Planning, organizing, and executing events including conferences, 
+                                weddings, corporate functions, and exhibitions.
                             </p>
                             <ul>
-                                <li>Economist</li>
-                                <li>Policy Analyst</li>
-                                <li>Market Researcher</li>
-                                <li>Economic Consultant</li>
+                                <li>Event Planner</li>
+                                <li>Conference Manager</li>
+                                <li>Wedding Coordinator</li>
+                                <li>Exhibition Manager</li>
                             </ul>
+                            <small>Focus: MICE industry, social events</small>
                         </div>
 
                         <div class="spec-card">
-                            <h3><i class="fas fa-lightbulb"></i> Entrepreneurship</h3>
+                            <h3><i class="fas fa-cocktail"></i> Food & Beverage</h3>
                             <p>
-                                Learn to identify opportunities, launch startups, and scale businesses. 
-                                Develop the mindset and skills to create your own successful ventures.
+                                Specialized training in restaurant operations, bar management, 
+                                beverage service, and hospitality business management.
                             </p>
                             <ul>
-                                <li>Startup Founder</li>
-                                <li>Business Consultant</li>
-                                <li>Venture Capitalist</li>
-                                <li>Innovation Manager</li>
+                                <li>Restaurant Manager</li>
+                                <li>Bar Manager</li>
+                                <li>Sommelier</li>
+                                <li>Banquet Manager</li>
                             </ul>
+                            <small>Focus: Restaurants, bars, catering</small>
                         </div>
 
                         <div class="spec-card">
-                            <h3><i class="fas fa-shopping-cart"></i> Marketing</h3>
+                            <h3><i class="fas fa-spa"></i> Resort & Leisure</h3>
                             <p>
-                                Master brand management, digital marketing, consumer behavior, 
-                                and sales strategies to drive business growth and market presence.
+                                Management of resorts, spas, wellness centers, 
+                                golf courses, and recreational facilities.
                             </p>
                             <ul>
-                                <li>Marketing Manager</li>
-                                <li>Brand Strategist</li>
-                                <li>Digital Marketer</li>
-                                <li>Sales Director</li>
+                                <li>Resort Manager</li>
+                                <li>Spa Director</li>
+                                <li>Leisure Manager</li>
+                                <li>Activities Coordinator</li>
                             </ul>
+                            <small>Focus: Resorts, cruise ships, wellness</small>
                         </div>
                     </div>
                 </section>
 
-                <!-- Universities -->
+                <!-- Tourism Destinations -->
                 <section class="blog-section">
-                    <h2><i class="fas fa-school"></i> Top Universities in Kenya</h2>
-                    <p>Leading institutions offering Business & Finance programs:</p>
+                    <h2><i class="fas fa-map-marked-alt"></i> Top Tourism Destinations in Kenya</h2>
+                    <div class="destinations-section">
+                        <div class="destination-item">
+                            <i class="fas fa-paw"></i>
+                            <div>Maasai Mara</div>
+                        </div>
+                        <div class="destination-item">
+                            <i class="fas fa-mountain"></i>
+                            <div>Mount Kenya</div>
+                        </div>
+                        <div class="destination-item">
+                            <i class="fas fa-umbrella-beach"></i>
+                            <div>Diani Beach</div>
+                        </div>
+                        <div class="destination-item">
+                            <i class="fas fa-water"></i>
+                            <div>Lake Nakuru</div>
+                        </div>
+                        <div class="destination-item">
+                            <i class="fas fa-tree"></i>
+                            <div>Arabuko Forest</div>
+                        </div>
+                        <div class="destination-item">
+                            <i class="fas fa-city"></i>
+                            <div>Nairobi City</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Institutions -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-school"></i> Top Institutions in Kenya</h2>
+                    <p>Leading institutions offering hospitality and tourism programs:</p>
                     
                     <div class="university-list">
-                        <div class="university-item">University of Nairobi</div>
+                        <div class="university-item">Kenya Utalii College</div>
                         <div class="university-item">Kenyatta University</div>
-                        <div class="university-item">Strathmore University</div>
-                        <div class="university-item">USIU Africa</div>
-                        <div class="university-item">KCA University</div>
-                        <div class="university-item">Mount Kenya University</div>
-                        <div class="university-item">Egerton University</div>
                         <div class="university-item">Moi University</div>
+                        <div class="university-item">Technical University of Mombasa</div>
+                        <div class="university-item">Mount Kenya University</div>
+                        <div class="university-item">Strathmore University</div>
+                        <div class="university-item">KCA University</div>
+                        <div class="university-item">TVET Institutions</div>
                     </div>
                 </section>
 
                 <!-- Career Opportunities -->
                 <section class="blog-section">
                     <h2><i class="fas fa-briefcase"></i> Career Opportunities</h2>
-                    <p>Graduates enjoy diverse career paths with excellent progression opportunities:</p>
+                    <p>Exciting career paths with global mobility and growth potential:</p>
                     
                     <div class="career-grid">
                         <div class="career-card">
-                            <strong><i class="fas fa-calculator"></i> Accountant</strong>
-                            <p>Manage financial records, prepare reports, and ensure regulatory compliance for organizations.</p>
-                            <small>Salary: Ksh 40,000 - 300,000+</small>
+                            <strong><i class="fas fa-hotel"></i> Hotel Manager</strong>
+                            <p>Oversee daily hotel operations, manage staff, ensure guest satisfaction, and maximize profitability.</p>
+                            <small>Salary: Ksh 80,000 - 500,000+</small>
                         </div>
                         <div class="career-card">
-                            <strong><i class="fas fa-chart-line"></i> Financial Analyst</strong>
-                            <p>Analyze investment opportunities, assess business performance, and provide strategic recommendations.</p>
+                            <strong><i class="fas fa-plane"></i> Airline Cabin Crew</strong>
+                            <p>Ensure passenger safety and comfort, provide in-flight service, and represent the airline brand.</p>
+                            <small>Salary: Ksh 70,000 - 300,000+</small>
+                        </div>
+                        <div class="career-card">
+                            <strong><i class="fas fa-utensils"></i> Executive Chef</strong>
+                            <p>Create menus, manage kitchen operations, control food costs, and maintain culinary standards.</p>
+                            <small>Salary: Ksh 90,000 - 600,000+</small>
+                        </div>
+                        <div class="career-card">
+                            <strong><i class="fas fa-map-signs"></i> Tour Guide</strong>
+                            <p>Lead tourist groups, provide cultural and historical information, and ensure memorable experiences.</p>
+                            <small>Salary: Ksh 40,000 - 200,000+</small>
+                        </div>
+                        <div class="career-card">
+                            <strong><i class="fas fa-glass-cheers"></i> Event Manager</strong>
+                            <p>Plan and execute events from conception to completion, managing vendors, budgets, and client expectations.</p>
                             <small>Salary: Ksh 60,000 - 400,000+</small>
                         </div>
                         <div class="career-card">
-                            <strong><i class="fas fa-briefcase"></i> Business Manager</strong>
-                            <p>Oversee daily operations, lead teams, and implement business strategies to achieve organizational goals.</p>
-                            <small>Salary: Ksh 70,000 - 500,000+</small>
-                        </div>
-                        <div class="career-card">
-                            <strong><i class="fas fa-hand-holding-usd"></i> Credit Officer</strong>
-                            <p>Evaluate loan applications, assess credit risk, and make lending decisions for financial institutions.</p>
-                            <small>Salary: Ksh 45,000 - 250,000+</small>
-                        </div>
-                        <div class="career-card">
-                            <strong><i class="fas fa-rocket"></i> Entrepreneur</strong>
-                            <p>Identify opportunities, start businesses, and drive innovation in various market sectors.</p>
-                            <small>Potential: Unlimited growth</small>
-                        </div>
-                        <div class="career-card">
-                            <strong><i class="fas fa-chart-bar"></i> Market Analyst</strong>
-                            <p>Research market trends, analyze consumer behavior, and provide insights for business decisions.</p>
-                            <small>Salary: Ksh 55,000 - 350,000+</small>
+                            <strong><i class="fas fa-ship"></i> Cruise Director</strong>
+                            <p>Oversee entertainment, activities, and guest services on cruise ships sailing worldwide.</p>
+                            <small>Salary: $2,000 - $8,000+ monthly</small>
                         </div>
                     </div>
                     
                     <p style="margin-top: 20px;">
-                        <strong>Industry Sectors:</strong> Graduates work across banking, manufacturing, retail, technology, 
-                        government, consulting, healthcare, and international organizations.
+                        <strong>Work Environments:</strong> Luxury Hotels, Resorts, Restaurants, Airlines, Cruise Ships, 
+                        Travel Agencies, Convention Centers, Theme Parks, Casinos, Tourism Boards, and International 
+                        Hospitality Chains.
                     </p>
                 </section>
 
                 <!-- Is This Right for You? -->
                 <section class="blog-section highlight">
-                    <h2><i class="fas fa-question-circle"></i> Is Business & Finance Right for You?</h2>
+                    <h2><i class="fas fa-question-circle"></i> Is Hospitality Right for You?</h2>
                     
-                    <p>This field is perfect if you:</p>
+                    <p>This exciting industry calls for individuals who:</p>
                     <ul>
-                        <li>Enjoy strategic thinking and problem-solving</li>
-                        <li>Have strong analytical and numerical skills</li>
-                        <li>Are interested in leadership and management</li>
-                        <li>Want to understand how organizations work</li>
-                        <li>Are entrepreneurial and innovative</li>
-                        <li>Enjoy working with people and teams</li>
-                        <li>Want versatile career options across industries</li>
+                        <li>Enjoy working with people from diverse backgrounds</li>
+                        <li>Thrive in fast-paced, dynamic environments</li>
+                        <li>Have excellent communication and interpersonal skills</li>
+                        <li>Are flexible with working hours (including weekends/holidays)</li>
+                        <li>Possess cultural sensitivity and awareness</li>
+                        <li>Have problem-solving abilities and remain calm under pressure</li>
+                        <li>Are passionate about travel, food, and experiences</li>
+                        <li>Want opportunities to work locally and internationally</li>
                     </ul>
                     
                     <p style="margin-top: 20px;">
-                        <strong>Career Flexibility:</strong> Business and Finance skills are transferable across industries 
-                        and geographic locations. Whether you want to work locally or internationally, in corporate or 
-                        entrepreneurial settings, this field offers unparalleled flexibility and growth potential.
+                        <strong>The Hospitality Professional:</strong> This field offers more than just a job—it offers 
+                        a lifestyle. You'll meet people from around the world, travel to exciting destinations, 
+                        and build a career that's as dynamic as it is rewarding. While it requires hard work and 
+                        dedication, the personal and professional growth opportunities are unparalleled.
                     </p>
                     
                     <div class="stats-section" style="margin: 25px 0 10px;">
                         <div class="stat-card">
-                            <div class="stat-number">#1</div>
-                            <div class="stat-label">Most Employable Degree</div>
+                            <div class="stat-number">#3</div>
+                            <div class="stat-label">Fastest Growing Industry</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">85%</div>
-                            <div class="stat-label">Graduate Satisfaction</div>
+                            <div class="stat-number">88%</div>
+                            <div class="stat-label">Career Satisfaction</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">20+</div>
-                            <div class="stat-label">Industries Available</div>
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">International Brands</div>
                         </div>
                     </div>
                 </section>
 
                 <!-- Call to Action -->
                 <section class="blog-cta">
-                    <h2>Build Your Business Career Today</h2>
+                    <h2>Start Your Hospitality Journey</h2>
                     <p>
-                        Get expert guidance on choosing the right specialization, selecting the best university, 
-                        and planning your path to success in the business world.
+                        Get expert guidance on hospitality career paths, international opportunities, 
+                        and choosing the right specialization for your passion and personality.
                     </p>
                     <div class="cta-buttons">
-                        <a href="https://wa.me/254742318339" class="btn-primary" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                            Chat on WhatsApp
-                        </a>
-                        <a href="https://www.csusm.edu/careers/documents/careerguide2021ada.pdf" class="btn-secondary" download="Business_Career_Guide.pdf">
-                            <i class="fas fa-file-download"></i>
-                            Download Career Guide
-                        </a>
+                        <button class="btn-primary">
+                            <i class="fas fa-concierge-bell"></i>
+                            Book Hospitality Consultation
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-passport"></i>
+                            Download Tourism Guide
+                        </button>
                     </div>
                 </section>
 
@@ -1022,64 +1160,11 @@
 
     </main>
 
-    <!-- Booking Consultation Section -->
-    <section class="booking-consultation">
-        <div class="container">
-            <h2>Ready to Start Your Business Journey?</h2>
-            <p>Book a free consultation with our experts to discuss your academic and career goals in Business & Finance.</p>
-            <a href="https://wa.me/254742318339" class="whatsapp-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-            </a>
-        </div>
-    </section>
-
-    <style>
-        .booking-consultation {
-            background: var(--gradient-business);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .booking-consultation .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .booking-consultation h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        .booking-consultation p {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            opacity: 0.9;
-        }
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #25D366;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-        .whatsapp-btn:hover {
-            background: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-        }
-    </style>
-
     <script>
         // Simple animations and interactivity
         document.addEventListener('DOMContentLoaded', function() {
             // Add click animation to cards
-            const cards = document.querySelectorAll('.spec-card, .career-card, .req-card, .duration-card, .stat-card, .university-item');
+            const cards = document.querySelectorAll('.spec-card, .career-card, .req-card, .duration-card, .stat-card, .university-item, .hospitality-badge, .destination-item');
             cards.forEach(card => {
                 card.addEventListener('click', function() {
                     this.style.transform = 'scale(0.98)';
@@ -1089,10 +1174,15 @@
                 });
             });
 
-            // Button click handler
+            // Button click handlers
+            document.querySelector('.btn-primary').addEventListener('click', function() {
+                alert('Redirecting to hospitality consultation booking...');
+                // In production: window.location.href = '/consultation/hospitality';
+            });
+
             document.querySelector('.btn-secondary').addEventListener('click', function() {
-                alert('Downloading business career guide PDF...');
-                // In production: window.location.href = '/downloads/business-guide.pdf';
+                alert('Downloading hospitality and tourism guide PDF...');
+                // In production: window.location.href = '/downloads/hospitality-guide.pdf';
             });
 
             // Staggered animation for sections
@@ -1111,24 +1201,38 @@
                 }
             });
 
-            // Add hover effect to specialization cards
-            const specCards = document.querySelectorAll('.spec-card');
-            specCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
+            // Add animation to hospitality badges
+            const hospitalityBadges = document.querySelectorAll('.hospitality-badge');
+            hospitalityBadges.forEach(badge => {
+                badge.addEventListener('mouseenter', function() {
                     const icon = this.querySelector('i');
                     if (icon) {
-                        icon.style.transform = 'scale(1.2) rotate(5deg)';
+                        icon.style.transform = 'rotate(15deg) scale(1.3)';
                         icon.style.transition = 'transform 0.3s ease';
                     }
                 });
                 
-                card.addEventListener('mouseleave', function() {
+                badge.addEventListener('mouseleave', function() {
                     const icon = this.querySelector('i');
                     if (icon) {
-                        icon.style.transform = 'scale(1) rotate(0deg)';
+                        icon.style.transform = 'rotate(0deg) scale(1)';
                     }
                 });
             });
+
+            // Add bell animation to course icon
+            const bellIcon = document.querySelector('.fa-concierge-bell');
+            if (bellIcon) {
+                setInterval(() => {
+                    bellIcon.style.transform = 'rotate(-10deg)';
+                    setTimeout(() => {
+                        bellIcon.style.transform = 'rotate(10deg)';
+                        setTimeout(() => {
+                            bellIcon.style.transform = 'rotate(0deg)';
+                        }, 150);
+                    }, 150);
+                }, 3000);
+            }
         });
     </script>
 
