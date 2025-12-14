@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT & Computer Science | Career Guide - Harun Consultancy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ============================================
+           CSS Variables (Matching Main Site)
+        ============================================= */
+        :root {
+            --primary: #0EA5A4;
+            --primary-light: #14B8B6;
+            --primary-dark: #0C8C8B;
+            --secondary: #FF7A59;
+            --dark: #0F172A;
+            --gray-dark: #334155;
+            --gray: #64748B;
+            --gray-light: #CBD5E1;
+            --light: #F8FAFC;
+            --white: #FFFFFF;
+            --bg-light: #F7FEFD;
+            --gradient-primary: linear-gradient(135deg, #0EA5A4 0%, #0C8C8B 100%);
+            --shadow-md: 0 4px 16px rgba(14, 165, 164, 0.12);
+            --shadow-lg: 0 8px 32px rgba(14, 165, 164, 0.16);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --transition: 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #F7FEFD 0%, #EFF6FF 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        /* ============================================
+           Back to Courses Button
+        ============================================= */
+        .back-nav {
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .back-nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-accent {
+            color: var(--primary);
+        }
+
+        /* ============================================
+           Blog Layout Container
+        ============================================= */
+        .blog-container {
+            max-width: 1100px;
+            margin: 40px auto 80px;
+            padding: 0 24px;
+        }
+
+        /* ============================================
+           Blog Post Styling
+        ============================================= */
+        .blog-post {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Blog Hero */
+        .blog-hero {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .blog-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .blog-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .course-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2.5rem;
+        }
+
+        .blog-hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .blog-intro {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Blog Meta Info */
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Blog Content */
+        .blog-content {
+            padding: 50px 40px;
+        }
+
+        /* Blog Sections */
+        .blog-section {
+            margin-bottom: 40px;
+            animation: fadeIn 0.6s ease;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .blog-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-light);
+            display: inline-block;
+        }
+
+        .blog-section h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin: 25px 0 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .blog-section h3 i {
+            color: var(--primary);
+        }
+
+        .blog-section p {
+            font-size: 1.05rem;
+            color: var(--gray-dark);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* Lists */
+        .blog-section ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .blog-section ul li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            color: var(--gray-dark);
+            line-height: 1.6;
+        }
+
+        .blog-section ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Special Section */
+        .blog-section.highlight {
+            background: var(--bg-light);
+            padding: 35px;
+            border-radius: var(--radius-md);
+            border-left: 5px solid var(--primary);
+            margin-top: 40px;
+        }
+
+        .blog-section.highlight h2 {
+            color: var(--primary);
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        /* Cards Grid for Specializations */
+        .specialization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .spec-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            border: 2px solid transparent;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .spec-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform var(--transition);
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .spec-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .spec-card h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+        /* University List */
+        .university-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .university-item {
+            background: var(--light);
+            padding: 15px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            font-weight: 500;
+            color: var(--gray-dark);
+            transition: all var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .university-item:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        /* Career Grid */
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .career-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--gray-light);
+            transition: all var(--transition);
+        }
+
+        .career-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .career-card strong {
+            color: var(--primary);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Requirement Cards */
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .req-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all var(--transition);
+        }
+
+        .req-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .req-card strong {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ============================================
+           Call to Action
+        ============================================= */
+        .blog-cta {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 50px 40px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .blog-cta h2 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .blog-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all var(--transition);
+            border: none;
+            font-family: 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* ============================================
+           Responsive Design
+        ============================================= */
+        @media (max-width: 768px) {
+            .blog-hero {
+                padding: 40px 24px;
+            }
+
+            .blog-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .blog-content {
+                padding: 40px 24px;
+            }
+
+            .blog-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .blog-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .specialization-grid,
+            .career-grid,
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .university-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .blog-intro {
+                font-size: 1.05rem;
+            }
+
+            .university-list {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+        }
+
+        /* ============================================
+           Staggered Animation Delay
+        ============================================= */
+        .blog-section:nth-child(1) { animation-delay: 0.1s; }
+        .blog-section:nth-child(2) { animation-delay: 0.2s; }
+        .blog-section:nth-child(3) { animation-delay: 0.3s; }
+        .blog-section:nth-child(4) { animation-delay: 0.4s; }
+        .blog-section:nth-child(5) { animation-delay: 0.5s; }
+        .blog-section:nth-child(6) { animation-delay: 0.6s; }
+        .blog-section:nth-child(7) { animation-delay: 0.7s; }
+        .blog-section:nth-child(8) { animation-delay: 0.8s; }
+    </style>
+</head>
+
+<body>
+
+    <!-- Back Navigation -->
+    <nav class="back-nav">
+        <div class="back-nav-container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Back to Courses
+            </a>
+            <a href="index.html" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                Harun<span class="brand-accent">Consultancy</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="blog-container">
+
+        <article class="blog-post">
+
+            <!-- Hero Section -->
+            <header class="blog-hero">
+                <div class="blog-hero-content">
+                    <div class="course-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h1>ICT & Computer Science</h1>
+                    <p class="blog-intro">
+                        Your complete guide to careers in technology, software development, and digital innovation. 
+                        Everything you need to know as a KCSE graduate pursuing tech careers.
+                    </p>
+                    <div class="blog-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Last Updated: March 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>For: KCSE Graduates</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>High Demand Field</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Blog Content -->
+            <div class="blog-content">
+
+                <!-- Overview Section -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-info-circle"></i> Course Overview</h2>
+                    <p>
+                        ICT (Information and Communication Technology) and Computer Science represent the backbone of the digital age. 
+                        This dynamic field focuses on the design, development, and implementation of computer systems, software applications, 
+                        network infrastructure, and data management solutions.
+                    </p>
+                    <p>
+                        As technology continues to transform every industry, from healthcare to finance to education, professionals in this 
+                        field are in high demand. The course is perfect for analytical thinkers, problem-solvers, and creative minds who 
+                        want to build the technologies that shape our future.
+                    </p>
+                </section>
+
+                <!-- Entry Requirements -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-clipboard-check"></i> Entry Requirements (KCSE)</h2>
+                    <p>Different institutions have varying requirements based on the level of study:</p>
+                    
+                    <div class="requirements-grid">
+                        <div class="req-card">
+                            <strong>Degree Programs</strong>
+                            <p>Mean Grade C+ and above</p>
+                            <small>Strong Math performance required</small>
+                        </div>
+                        <div class="req-card">
+                            <strong>Diploma Programs</strong>
+                            <p>Mean Grade C or C-</p>
+                            <small>Basic Math knowledge</small>
+                        </div>
+                        <div class="req-card">
+                            <strong>Certificate Courses</strong>
+                            <p>Mean Grade D+ or D</p>
+                            <small>Entry-level technology skills</small>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 20px;">
+                        <strong>Note:</strong> While Physics is an advantage for some specializations (like hardware engineering), 
+                        it's not mandatory for most software-focused programs. Mathematics is the key subject for this field.
+                    </p>
+                </section>
+
+                <!-- Duration of Study -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-calendar-alt"></i> Duration of Study</h2>
+                    <div class="specialization-grid">
+                        <div class="spec-card">
+                            <h3><i class="fas fa-certificate"></i> Certificate</h3>
+                            <p>6 months – 1 year of intensive practical training focusing on fundamental IT skills and software basics.</p>
+                        </div>
+                        <div class="spec-card">
+                            <h3><i class="fas fa-graduation-cap"></i> Diploma</h3>
+                            <p>2 – 3 years combining theoretical knowledge with hands-on technical skills development.</p>
+                        </div>
+                        <div class="spec-card">
+                            <h3><i class="fas fa-university"></i> Bachelor's Degree</h3>
+                            <p>4 years of comprehensive study covering computer science theory, software engineering, and specializations.</p>
+                        </div>
+                        <div class="spec-card">
+                            <h3><i class="fas fa-user-graduate"></i> Master's Degree</h3>
+                            <p>1.5 – 2 years for advanced specialization and research in specific technology areas.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Specializations -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-sitemap"></i> Major Branches & Specializations</h2>
+                    
+                    <div class="specialization-grid">
+                        <div class="spec-card">
+                            <h3><i class="fas fa-code"></i> Software Development</h3>
+                            <p>
+                                Design, develop, and maintain applications, websites, and systems. 
+                                Learn programming languages, software architecture, and development methodologies.
+                            </p>
+                            <ul>
+                                <li>Web Developer</li>
+                                <li>Mobile App Developer</li>
+                                <li>Software Engineer</li>
+                                <li>Full-Stack Developer</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="spec-card">
+                            <h3><i class="fas fa-network-wired"></i> Networking & Systems</h3>
+                            <p>
+                                Design, implement, and manage computer networks, servers, and IT infrastructure. 
+                                Focus on connectivity, security, and system optimization.
+                            </p>
+                            <ul>
+                                <li>Network Administrator</li>
+                                <li>Systems Engineer</li>
+                                <li>IT Support Specialist</li>
+                                <li>Cloud Administrator</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="spec-card">
+                            <h3><i class="fas fa-shield-alt"></i> Cybersecurity</h3>
+                            <p>
+                                Protect systems, networks, and data from digital attacks. 
+                                Learn ethical hacking, threat analysis, and security protocols.
+                            </p>
+                            <ul>
+                                <li>Cybersecurity Analyst</li>
+                                <li>Ethical Hacker</li>
+                                <li>Security Consultant</li>
+                                <li>Information Security Officer</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="spec-card">
+                            <h3><i class="fas fa-database"></i> Data, AI & Cloud</h3>
+                            <p>
+                                Work with big data, artificial intelligence, and cloud platforms. 
+                                Focus on data analysis, machine learning, and cloud infrastructure.
+                            </p>
+                            <ul>
+                                <li>Data Analyst</li>
+                                <li>Machine Learning Engineer</li>
+                                <li>Cloud Engineer</li>
+                                <li>AI Specialist</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Universities -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-school"></i> Universities in Kenya</h2>
+                    <p>Top institutions offering ICT and Computer Science programs:</p>
+                    
+                    <div class="university-list">
+                        <div class="university-item">University of Nairobi</div>
+                        <div class="university-item">JKUAT</div>
+                        <div class="university-item">Kenyatta University</div>
+                        <div class="university-item">Maseno University</div>
+                        <div class="university-item">Strathmore University</div>
+                        <div class="university-item">USIU Africa</div>
+                        <div class="university-item">Mount Kenya University</div>
+                        <div class="university-item">Moi University</div>
+                    </div>
+                </section>
+
+                <!-- Career Opportunities -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-briefcase"></i> Career Opportunities</h2>
+                    <p>Graduates can pursue various rewarding careers with excellent growth potential:</p>
+                    
+                    <div class="career-grid">
+                        <div class="career-card">
+                            <strong><i class="fas fa-code"></i> Software Engineer</strong>
+                            <p>Design, develop, and maintain software applications and systems for businesses and consumers.</p>
+                        </div>
+                        <div class="career-card">
+                            <strong><i class="fas fa-chart-bar"></i> Data Analyst</strong>
+                            <p>Collect, process, and analyze data to support business decision-making and strategy.</p>
+                        </div>
+                        <div class="career-card">
+                            <strong><i class="fas fa-network-wired"></i> Network Engineer</strong>
+                            <p>Design, implement, and manage computer networks for organizations of all sizes.</p>
+                        </div>
+                        <div class="career-card">
+                            <strong><i class="fas fa-shield-alt"></i> Cybersecurity Analyst</strong>
+                            <p>Protect computer systems and networks from cyber threats and security breaches.</p>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 20px;">
+                        <strong>Salary Range:</strong> Entry-level positions: Ksh 40,000 - 80,000 | 
+                        Experienced professionals: Ksh 150,000 - 500,000+ | 
+                        International opportunities: $60,000 - $150,000+
+                    </p>
+                </section>
+
+                <!-- Is This Right for You? -->
+                <section class="blog-section highlight">
+                    <h2><i class="fas fa-question-circle"></i> Is This Course Right for You?</h2>
+                    
+                    <p>This course is an excellent choice if you:</p>
+                    <ul>
+                        <li>Enjoy problem-solving and logical thinking</li>
+                        <li>Have an interest in technology and how things work</li>
+                        <li>Are patient and detail-oriented</li>
+                        <li>Enjoy continuous learning (technology evolves rapidly)</li>
+                        <li>Want a career with high demand and good earning potential</li>
+                        <li>Are creative and enjoy building things</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px;">
+                        <strong>Consider this:</strong> The field requires continuous learning as technology evolves. 
+                        If you enjoy staying updated with the latest trends and are willing to keep learning, 
+                        this can be a highly rewarding career path with opportunities both locally and internationally.
+                    </p>
+                </section>
+
+                <!-- Call to Action -->
+                <section class="blog-cta">
+                    <h2>Ready to Start Your Tech Journey?</h2>
+                    <p>
+                        Get personalized guidance on course selection, university applications, 
+                        and career planning from our expert counselors.
+                    </p>
+                    <div class="cta-buttons">
+                        <button class="btn-primary">
+                            <i class="fas fa-calendar-check"></i>
+                            Book Free Consultation
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-download"></i>
+                            Download Course Guide
+                        </button>
+                    </div>
+                </section>
+
+            </div> <!-- End blog-content -->
+
+        </article>
+
+    </main>
+
+    <script>
+        // Simple animations and interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click animation to cards
+            const cards = document.querySelectorAll('.spec-card, .career-card, .req-card, .university-item');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+
+            // Button click handlers
+            document.querySelector('.btn-primary').addEventListener('click', function() {
+                alert('Redirecting to consultation booking...');
+                // In production: window.location.href = '/consultation';
+            });
+
+            document.querySelector('.btn-secondary').addEventListener('click', function() {
+                alert('Downloading course guide PDF...');
+                // In production: window.location.href = '/downloads/ict-guide.pdf';
+            });
+
+            // Staggered animation for sections
+            const sections = document.querySelectorAll('.blog-section');
+            sections.forEach((section, index) => {
+                section.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            // Back to top functionality
+            window.addEventListener('scroll', function() {
+                const backNav = document.querySelector('.back-nav');
+                if (window.scrollY > 100) {
+                    backNav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
+                } else {
+                    backNav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
