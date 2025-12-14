@@ -843,10 +843,10 @@
                         and career planning from our expert counselors.
                     </p>
                     <div class="cta-buttons">
-                        <button class="btn-primary">
-                            <i class="fas fa-calendar-check"></i>
-                            Book Free Consultation
-                        </button>
+                        <a href="https://wa.me/254742318339" class="btn-primary" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            Chat on WhatsApp
+                        </a>
                         <button class="btn-secondary">
                             <i class="fas fa-download"></i>
                             Download Course Guide
@@ -859,6 +859,59 @@
         </article>
 
     </main>
+
+    <!-- Booking Consultation Section -->
+    <section class="booking-consultation">
+        <div class="container">
+            <h2>Ready to Start Your Tech Journey?</h2>
+            <p>Book a free consultation with our experts to discuss your academic and career goals in ICT & Computer Science.</p>
+            <a href="https://wa.me/254742318339" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <style>
+        .booking-consultation {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .booking-consultation .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .booking-consultation h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .booking-consultation p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+    </style>
 
     <script>
         // Simple animations and interactivity
@@ -874,12 +927,7 @@
                 });
             });
 
-            // Button click handlers
-            document.querySelector('.btn-primary').addEventListener('click', function() {
-                alert('Redirecting to consultation booking...');
-                // In production: window.location.href = '/consultation';
-            });
-
+            // Button click handler for download button
             document.querySelector('.btn-secondary').addEventListener('click', function() {
                 alert('Downloading course guide PDF...');
                 // In production: window.location.href = '/downloads/ict-guide.pdf';
