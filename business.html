@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business & Finance | Career Guide - Harun Consultancy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ============================================
+           CSS Variables (Matching Main Site)
+        ============================================= */
+        :root {
+            --primary: #0EA5A4;
+            --primary-light: #14B8B6;
+            --primary-dark: #0C8C8B;
+            --secondary: #FF7A59;
+            --dark: #0F172A;
+            --gray-dark: #334155;
+            --gray: #64748B;
+            --gray-light: #CBD5E1;
+            --light: #F8FAFC;
+            --white: #FFFFFF;
+            --bg-light: #F7FEFD;
+            --gradient-primary: linear-gradient(135deg, #0EA5A4 0%, #0C8C8B 100%);
+            --gradient-business: linear-gradient(135deg, #0C8C8B 0%, #0A7180 100%);
+            --shadow-md: 0 4px 16px rgba(14, 165, 164, 0.12);
+            --shadow-lg: 0 8px 32px rgba(14, 165, 164, 0.16);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --transition: 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #F7FEFD 0%, #EFF6FF 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        /* ============================================
+           Back to Courses Button
+        ============================================= */
+        .back-nav {
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .back-nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-accent {
+            color: var(--primary);
+        }
+
+        /* ============================================
+           Blog Layout Container
+        ============================================= */
+        .blog-container {
+            max-width: 1100px;
+            margin: 40px auto 80px;
+            padding: 0 24px;
+        }
+
+        /* ============================================
+           Blog Post Styling
+        ============================================= */
+        .blog-post {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Blog Hero */
+        .blog-hero {
+            background: var(--gradient-business);
+            color: var(--white);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .blog-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .blog-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .course-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2.5rem;
+        }
+
+        .blog-hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .blog-intro {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Blog Meta Info */
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Blog Content */
+        .blog-content {
+            padding: 50px 40px;
+        }
+
+        /* Blog Sections */
+        .blog-section {
+            margin-bottom: 40px;
+            animation: fadeIn 0.6s ease;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .blog-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-light);
+            display: inline-block;
+        }
+
+        .blog-section h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin: 25px 0 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .blog-section h3 i {
+            color: var(--primary);
+        }
+
+        .blog-section p {
+            font-size: 1.05rem;
+            color: var(--gray-dark);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* Lists */
+        .blog-section ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .blog-section ul li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            color: var(--gray-dark);
+            line-height: 1.6;
+        }
+
+        .blog-section ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Special Section */
+        .blog-section.highlight {
+            background: #F0F9F9;
+            padding: 35px;
+            border-radius: var(--radius-md);
+            border-left: 5px solid var(--primary);
+            margin-top: 40px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .blog-section.highlight h2 {
+            color: var(--primary);
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        /* Cards Grid for Specializations */
+        .specialization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .spec-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            border: 2px solid transparent;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .spec-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-business);
+            transform: scaleX(0);
+            transition: transform var(--transition);
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .spec-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .spec-card h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+        /* University List */
+        .university-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .university-item {
+            background: var(--light);
+            padding: 15px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            font-weight: 500;
+            color: var(--gray-dark);
+            transition: all var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .university-item:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        /* Career Grid */
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .career-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--gray-light);
+            transition: all var(--transition);
+        }
+
+        .career-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .career-card strong {
+            color: var(--primary);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Requirement Cards */
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .req-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all var(--transition);
+        }
+
+        .req-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .req-card strong {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Duration Cards */
+        .duration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .duration-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all var(--transition);
+        }
+
+        .duration-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .duration-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .duration-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        /* ============================================
+           Call to Action
+        ============================================= */
+        .blog-cta {
+            background: var(--gradient-business);
+            color: var(--white);
+            padding: 50px 40px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .blog-cta h2 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .blog-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all var(--transition);
+            border: none;
+            font-family: 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 2px solid transparent;
+            transition: all var(--transition);
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--gray-dark);
+            font-size: 0.95rem;
+        }
+
+        /* ============================================
+           Responsive Design
+        ============================================= */
+        @media (max-width: 768px) {
+            .blog-hero {
+                padding: 40px 24px;
+            }
+
+            .blog-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .blog-content {
+                padding: 40px 24px;
+            }
+
+            .blog-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .blog-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .specialization-grid,
+            .career-grid,
+            .requirements-grid,
+            .duration-grid,
+            .stats-section {
+                grid-template-columns: 1fr;
+            }
+
+            .university-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .blog-intro {
+                font-size: 1.05rem;
+            }
+
+            .university-list {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+        }
+
+        /* ============================================
+           Staggered Animation Delay
+        ============================================= */
+        .blog-section:nth-child(1) { animation-delay: 0.1s; }
+        .blog-section:nth-child(2) { animation-delay: 0.2s; }
+        .blog-section:nth-child(3) { animation-delay: 0.3s; }
+        .blog-section:nth-child(4) { animation-delay: 0.4s; }
+        .blog-section:nth-child(5) { animation-delay: 0.5s; }
+        .blog-section:nth-child(6) { animation-delay: 0.6s; }
+        .blog-section:nth-child(7) { animation-delay: 0.7s; }
+        .blog-section:nth-child(8) { animation-delay: 0.8s; }
+    </style>
+</head>
+
+<body>
+
+    <!-- Back Navigation -->
+    <nav class="back-nav">
+        <div class="back-nav-container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Back to Courses
+            </a>
+            <a href="index.html" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                Harun<span class="brand-accent">Consultancy</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="blog-container">
+
+        <article class="blog-post">
+
+            <!-- Hero Section -->
+            <header class="blog-hero">
+                <div class="blog-hero-content">
+                    <div class="course-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h1>Business & Finance</h1>
+                    <p class="blog-intro">
+                        Your comprehensive guide to careers in entrepreneurship, management, accounting, 
+                        economics, and financial systems. Build the skills to lead and innovate in the business world.
+                    </p>
+                    <div class="blog-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Last Updated: March 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>For: KCSE Graduates</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Versatile Career Paths</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Blog Content -->
+            <div class="blog-content">
+
+                <!-- Overview Section -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-info-circle"></i> Course Overview</h2>
+                    <p>
+                        Business and Finance form the foundation of every successful organization and economy. 
+                        This dynamic field focuses on organizational management, financial systems, market analysis, 
+                        and strategic decision-making that drives growth and innovation.
+                    </p>
+                    <p>
+                        From multinational corporations to local startups, every organization needs skilled professionals 
+                        who understand how to manage resources, analyze markets, and make sound financial decisions. 
+                        This course is perfect for strategic thinkers, analytical minds, and future leaders who want to 
+                        shape the business landscape.
+                    </p>
+                    
+                    <div class="stats-section">
+                        <div class="stat-card">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Employment Rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">4.2%</div>
+                            <div class="stat-label">Annual Growth</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">40+</div>
+                            <div class="stat-label">Specializations</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">70+</div>
+                            <div class="stat-label">Institutions in Kenya</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Entry Requirements -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-clipboard-check"></i> Entry Requirements (KCSE)</h2>
+                    <p>Different levels of study have varying requirements:</p>
+                    
+                    <div class="requirements-grid">
+                        <div class="req-card">
+                            <strong>Degree Programs</strong>
+                            <p>Mean Grade C+ and above</p>
+                            <small>Mathematics highly recommended</small>
+                        </div>
+                        <div class="req-card">
+                            <strong>Diploma Programs</strong>
+                            <p>Mean Grade C or C-</p>
+                            <small>Business-related subjects preferred</small>
+                        </div>
+                        <div class="req-card">
+                            <strong>Certificate Courses</strong>
+                            <p>Mean Grade D+ or D</p>
+                            <small>Basic business understanding</small>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 20px;">
+                        <strong>Important:</strong> Mathematics and Business Studies are particularly valuable for 
+                        Finance, Economics, and Accounting specializations. Some universities may require specific 
+                        subject combinations for direct entry into specialized programs.
+                    </p>
+                </section>
+
+                <!-- Duration of Study -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-calendar-alt"></i> Duration of Study</h2>
+                    <div class="duration-grid">
+                        <div class="duration-card">
+                            <i class="fas fa-certificate"></i>
+                            <h4>Certificate</h4>
+                            <p>6 months – 1 year</p>
+                            <small>Basic business principles</small>
+                        </div>
+                        <div class="duration-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Diploma</h4>
+                            <p>2 – 3 years</p>
+                            <small>Practical business skills</small>
+                        </div>
+                        <div class="duration-card">
+                            <i class="fas fa-university"></i>
+                            <h4>Bachelor's Degree</h4>
+                            <p>4 years</p>
+                            <small>Comprehensive business education</small>
+                        </div>
+                        <div class="duration-card">
+                            <i class="fas fa-user-graduate"></i>
+                            <h4>Master's (MBA)</h4>
+                            <p>1.5 – 2 years</p>
+                            <small>Advanced leadership training</small>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Specializations -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-sitemap"></i> Major Branches & Specializations</h2>
+                    
+                    <div class="specialization-grid">
+                        <div class="spec-card">
+                            <h3><i class="fas fa-briefcase"></i> Business Administration</h3>
+                            <p>
+                                Master organizational leadership, strategic planning, and operational management. 
+                                Learn to lead teams and drive business growth across various industries.
+                            </p>
+                            <ul>
+                                <li>Business Manager</li>
+                                <li>Operations Director</li>
+                                <li>Project Manager</li>
+                                <li>Human Resources Manager</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="spec-card">
+                            <h3><i class="fas fa-calculator"></i> Accounting</h3>
+                            <p>
+                                Master financial recording, auditing, taxation, and compliance. 
+                                Become the financial backbone of any organization with certified expertise.
+                            </p>
+                            <ul>
+                                <li>Certified Accountant</li>
+                                <li>Auditor</li>
+                                <li>Tax Consultant</li>
+                                <li>Financial Controller</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="spec-card">
+                            <h3><i class="fas fa-landmark"></i> Finance & Banking</h3>
+                            <p>
+                                Specialize in investments, banking operations, financial planning, 
+                                and risk management. Navigate the complex world of finance and capital.
+                            </p>
+                            <ul>
+                                <li>Financial Analyst</li>
+                                <li>Credit Officer</li>
+                                <li>Investment Banker</li>
+                                <li>Wealth Manager</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="spec-card">
+                            <h3><i class="fas fa-chart-bar"></i> Economics</h3>
+                            <p>
+                                Analyze market behavior, economic systems, and policy impacts. 
+                                Understand the forces that shape national and global economies.
+                            </p>
+                            <ul>
+                                <li>Economist</li>
+                                <li>Policy Analyst</li>
+                                <li>Market Researcher</li>
+                                <li>Economic Consultant</li>
+                            </ul>
+                        </div>
+
+                        <div class="spec-card">
+                            <h3><i class="fas fa-lightbulb"></i> Entrepreneurship</h3>
+                            <p>
+                                Learn to identify opportunities, launch startups, and scale businesses. 
+                                Develop the mindset and skills to create your own successful ventures.
+                            </p>
+                            <ul>
+                                <li>Startup Founder</li>
+                                <li>Business Consultant</li>
+                                <li>Venture Capitalist</li>
+                                <li>Innovation Manager</li>
+                            </ul>
+                        </div>
+
+                        <div class="spec-card">
+                            <h3><i class="fas fa-shopping-cart"></i> Marketing</h3>
+                            <p>
+                                Master brand management, digital marketing, consumer behavior, 
+                                and sales strategies to drive business growth and market presence.
+                            </p>
+                            <ul>
+                                <li>Marketing Manager</li>
+                                <li>Brand Strategist</li>
+                                <li>Digital Marketer</li>
+                                <li>Sales Director</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Universities -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-school"></i> Top Universities in Kenya</h2>
+                    <p>Leading institutions offering Business & Finance programs:</p>
+                    
+                    <div class="university-list">
+                        <div class="university-item">University of Nairobi</div>
+                        <div class="university-item">Kenyatta University</div>
+                        <div class="university-item">Strathmore University</div>
+                        <div class="university-item">USIU Africa</div>
+                        <div class="university-item">KCA University</div>
+                        <div class="university-item">Mount Kenya University</div>
+                        <div class="university-item">Egerton University</div>
+                        <div class="university-item">Moi University</div>
+                    </div>
+                </section>
+
+                <!-- Career Opportunities -->
+                <section class="blog-section">
+                    <h2><i class="fas fa-briefcase"></i> Career Opportunities</h2>
+                    <p>Graduates enjoy diverse career paths with excellent progression opportunities:</p>
+                    
+                    <div class="career-grid">
+                        <div class="career-card">
+                            <strong><i class="fas fa-calculator"></i> Accountant</strong>
+                            <p>Manage financial records, prepare reports, and ensure regulatory compliance for organizations.</p>
+                            <small>Salary: Ksh 40,000 - 300,000+</small>
+                        </div>
+                        <div class="career-card">
+                            <strong><i class="fas fa-chart-line"></i> Financial Analyst</strong>
+                            <p>Analyze investment opportunities, assess business performance, and provide strategic recommendations.</p>
+                            <small>Salary: Ksh 60,000 - 400,000+</small>
+                        </div>
+                        <div class="career-card">
+                            <strong><i class="fas fa-briefcase"></i> Business Manager</strong>
+                            <p>Oversee daily operations, lead teams, and implement business strategies to achieve organizational goals.</p>
+                            <small>Salary: Ksh 70,000 - 500,000+</small>
+                        </div>
+                        <div class="career-card">
+                            <strong><i class="fas fa-hand-holding-usd"></i> Credit Officer</strong>
+                            <p>Evaluate loan applications, assess credit risk, and make lending decisions for financial institutions.</p>
+                            <small>Salary: Ksh 45,000 - 250,000+</small>
+                        </div>
+                        <div class="career-card">
+                            <strong><i class="fas fa-rocket"></i> Entrepreneur</strong>
+                            <p>Identify opportunities, start businesses, and drive innovation in various market sectors.</p>
+                            <small>Potential: Unlimited growth</small>
+                        </div>
+                        <div class="career-card">
+                            <strong><i class="fas fa-chart-bar"></i> Market Analyst</strong>
+                            <p>Research market trends, analyze consumer behavior, and provide insights for business decisions.</p>
+                            <small>Salary: Ksh 55,000 - 350,000+</small>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 20px;">
+                        <strong>Industry Sectors:</strong> Graduates work across banking, manufacturing, retail, technology, 
+                        government, consulting, healthcare, and international organizations.
+                    </p>
+                </section>
+
+                <!-- Is This Right for You? -->
+                <section class="blog-section highlight">
+                    <h2><i class="fas fa-question-circle"></i> Is Business & Finance Right for You?</h2>
+                    
+                    <p>This field is perfect if you:</p>
+                    <ul>
+                        <li>Enjoy strategic thinking and problem-solving</li>
+                        <li>Have strong analytical and numerical skills</li>
+                        <li>Are interested in leadership and management</li>
+                        <li>Want to understand how organizations work</li>
+                        <li>Are entrepreneurial and innovative</li>
+                        <li>Enjoy working with people and teams</li>
+                        <li>Want versatile career options across industries</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px;">
+                        <strong>Career Flexibility:</strong> Business and Finance skills are transferable across industries 
+                        and geographic locations. Whether you want to work locally or internationally, in corporate or 
+                        entrepreneurial settings, this field offers unparalleled flexibility and growth potential.
+                    </p>
+                    
+                    <div class="stats-section" style="margin: 25px 0 10px;">
+                        <div class="stat-card">
+                            <div class="stat-number">#1</div>
+                            <div class="stat-label">Most Employable Degree</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">85%</div>
+                            <div class="stat-label">Graduate Satisfaction</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">20+</div>
+                            <div class="stat-label">Industries Available</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Call to Action -->
+                <section class="blog-cta">
+                    <h2>Build Your Business Career Today</h2>
+                    <p>
+                        Get expert guidance on choosing the right specialization, selecting the best university, 
+                        and planning your path to success in the business world.
+                    </p>
+                    <div class="cta-buttons">
+                        <button class="btn-primary">
+                            <i class="fas fa-calendar-check"></i>
+                            Book Business Consultation
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-file-download"></i>
+                            Download Career Guide
+                        </button>
+                    </div>
+                </section>
+
+            </div> <!-- End blog-content -->
+
+        </article>
+
+    </main>
+
+    <script>
+        // Simple animations and interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click animation to cards
+            const cards = document.querySelectorAll('.spec-card, .career-card, .req-card, .duration-card, .stat-card, .university-item');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+
+            // Button click handlers
+            document.querySelector('.btn-primary').addEventListener('click', function() {
+                alert('Redirecting to business consultation booking...');
+                // In production: window.location.href = '/consultation/business';
+            });
+
+            document.querySelector('.btn-secondary').addEventListener('click', function() {
+                alert('Downloading business career guide PDF...');
+                // In production: window.location.href = '/downloads/business-guide.pdf';
+            });
+
+            // Staggered animation for sections
+            const sections = document.querySelectorAll('.blog-section');
+            sections.forEach((section, index) => {
+                section.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            // Back to top functionality
+            window.addEventListener('scroll', function() {
+                const backNav = document.querySelector('.back-nav');
+                if (window.scrollY > 100) {
+                    backNav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
+                } else {
+                    backNav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+                }
+            });
+
+            // Add hover effect to specialization cards
+            const specCards = document.querySelectorAll('.spec-card');
+            specCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.style.transform = 'scale(1.2) rotate(5deg)';
+                        icon.style.transition = 'transform 0.3s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.style.transform = 'scale(1) rotate(0deg)';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
